@@ -43,7 +43,7 @@ public_inbox = 'grimoire_elk_public_inbox.utils:get_connectors'
 "Bug Tracker" = "https://github.com/bitergia-analytics/grimoirelab-elk-public-inbox/issues"
 
 [tool.poetry.dependencies]
-python = "^3.7.1"
+python = "^3.8"
 
 grimoire-elk = { version = ">=0.106.0", allow-prereleases = true}
 perceval-public-inbox = { version = ">=0.1.1", allow-prereleases = true }

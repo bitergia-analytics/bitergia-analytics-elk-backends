@@ -1,2 +1,3 @@
+-e git+https://github.com/chaoss/grimoirelab-cereslib/#egg=cereslib
 -e git+https://github.com/chaoss/grimoirelab-elk/#egg=grimoire-elk
 -e git+https://github.com/bitergia-analytics/grimoirelab-perceval-public-inbox.git/#egg=perceval-public-inbox
