@@ -49,6 +49,7 @@ grimoire-elk = { version = ">=0.106.0", allow-prereleases = true}
 perceval-public-inbox = { version = ">=0.1.1", allow-prereleases = true }
 
 charset-normalizer = "3.3.0"
+pylint = "3.0.1"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^4.0.1"
