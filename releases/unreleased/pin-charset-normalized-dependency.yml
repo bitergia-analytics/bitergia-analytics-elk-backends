@@ -1,0 +1,7 @@
+---
+title: Pin charset-normalized dependency
+category: dependency
+author: null
+issue: null
+notes: >
+  Pin charset-normalized package to be aligned with Perceval version.
