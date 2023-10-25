@@ -1,8 +1,0 @@
----
-title: Pin charset-normalized and pylint dependencies
-category: dependency
-author: null
-issue: null
-notes: >
-  Pin charset-normalized package to be aligned with Perceval version,
-  and pylint to be aligned with Graal.
