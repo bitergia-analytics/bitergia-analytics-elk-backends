@@ -1595,17 +1595,18 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-public-inbox"
-version = "0.1.5rc1"
+version = "0.1.5rc2"
 description = "Perceval backend for public-inbox."
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "perceval_public_inbox-0.1.5rc1-py3-none-any.whl", hash = "sha256:6b00cef23397f4c8002b16b6d5f867ac99e66f9d74112e7cde388d49b1e2c92c"},
-    {file = "perceval_public_inbox-0.1.5rc1.tar.gz", hash = "sha256:a26ee92d812a38f153042309f6a1011ccb143374b8818109bffb8136383dfa94"},
+    {file = "perceval_public_inbox-0.1.5rc2-py3-none-any.whl", hash = "sha256:e530a1703addd923bdac605e17aa8b501658f46c7be6eddf1b2466b3cd15bcee"},
+    {file = "perceval_public_inbox-0.1.5rc2.tar.gz", hash = "sha256:06aae96b5167abce6b99cd0884326b4cc1c5ac2aed3f3d9bf7b804e45df48cf0"},
 ]
 
 [package.dependencies]
 charset-normalizer = "3.3.0"
+cryptography = "41.0.4"
 grimoirelab-toolkit = ">=0.3"
 perceval = ">=0.19"
 
