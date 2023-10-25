@@ -1,9 +1,0 @@
----
-title: Pin multiple dependencies
-category: dependency
-author: null
-issue: null
-notes: >
-  Pin charset-normalized and cryptography packages to be aligned with
-  Perceval version, pylint to be aligned with Graal and cachetools to be
-  aligned with SortingHat.
