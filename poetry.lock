@@ -1595,13 +1595,13 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-public-inbox"
-version = "0.1.6rc1"
+version = "0.1.6"
 description = "Perceval backend for public-inbox."
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "perceval_public_inbox-0.1.6rc1-py3-none-any.whl", hash = "sha256:3103bba633e24d920c5061d75967e634be7db7aa28933612d53a196494fd155e"},
-    {file = "perceval_public_inbox-0.1.6rc1.tar.gz", hash = "sha256:58dae2be7fec2d6600302ff14c9a0f1b67f5477d4ba1171451778b3c3e17812d"},
+    {file = "perceval_public_inbox-0.1.6-py3-none-any.whl", hash = "sha256:4ab6bf7dcc098a25be66a0d0c96508c6377a73fc50b90fec0366477ea9f1aebb"},
+    {file = "perceval_public_inbox-0.1.6.tar.gz", hash = "sha256:249be4ab0cf011c5eb51e8cabbb9235177fe3150a949679755e9a62c202ce960"},
 ]
 
 [package.dependencies]
