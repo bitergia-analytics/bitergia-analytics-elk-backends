@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "grimoire-elk-public-inbox"
-version = "0.1.4"
+version = "0.1.5-rc.1"
 description = "GrimoireELK plugic for public-inbox."
 authors = [
     "GrimoireLab Developers"
