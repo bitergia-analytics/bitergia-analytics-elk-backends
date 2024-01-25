@@ -20,9 +20,15 @@
 #
 
 from perceval.backends.public_inbox.public_inbox import PublicInbox, PublicInboxCommand
+from perceval.backends.topicbox.topicbox import Topicbox, TopicboxCommand
 from .enriched.public_inbox import PublicInboxEnrich
+from .enriched.topicbox import TopicboxEnrich
 from .raw.public_inbox import PublicInboxOcean
+from .raw.topicbox import TopicboxOcean
 
 
 def get_connectors():
-    return {"public_inbox": [PublicInbox, PublicInboxOcean, PublicInboxEnrich, PublicInboxCommand]}
+    return {
+        "public_inbox": [PublicInbox, PublicInboxOcean, PublicInboxEnrich, PublicInboxCommand],
+        "topicbox": [Topicbox, TopicboxOcean, TopicboxEnrich, TopicboxCommand]
+    }

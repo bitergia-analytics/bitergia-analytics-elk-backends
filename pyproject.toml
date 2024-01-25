@@ -47,6 +47,7 @@ python = "^3.8"
 
 grimoire-elk = { version = ">=0.106.0", allow-prereleases = true}
 perceval-public-inbox = { version = ">=0.1.1", allow-prereleases = true }
+#perceval-topicbox = { version = ">=0.1.1", allow-prereleases = true }
 
 charset-normalizer = "3.3.0"
 pylint = "3.0.1"

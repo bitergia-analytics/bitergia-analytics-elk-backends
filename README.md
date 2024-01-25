@@ -3,6 +3,8 @@
 GrimoireELK backends installed in Bitergia Analytics:
 - **public-inbox**: software for efficiently managing and archiving public mailing
 lists using Git repositories.
+- **Topicbox**: email discussion platform that facilitates organized group
+communication through dedicated email groups.
 
 ## Requirements
 
