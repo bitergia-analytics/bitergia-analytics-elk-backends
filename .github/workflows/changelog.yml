@@ -3,7 +3,7 @@ name: Check changelog file included
 on:
   pull_request:
     paths:
-      - 'grimoire_elk_public_inbox/**'
+      - 'bap_elk_backends/**'
 
 jobs:
   check-changelog:

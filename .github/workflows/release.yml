@@ -14,7 +14,7 @@ jobs:
       - name: Build package using Poetry and store result
         uses: chaoss/grimoirelab-github-actions/build@master
         with:
-          artifact-name: grimoire-elk-public-inbox-dist
+          artifact-name: bap-elk-backends-dist
           artifact-path: dist
 
   tests:
@@ -45,7 +45,7 @@ jobs:
       - name: Download distribution artifact
         uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741 # v3.0.0
         with:
-          name: grimoire-elk-public-inbox-dist
+          name: bap-elk-backends-dist
           path: dist
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@13ae5bb136fac2878aff31522b9efb785519f984 # v4.3.0
@@ -110,6 +110,6 @@ jobs:
       - name: Publish the package in PyPI
         uses: chaoss/grimoirelab-github-actions/publish@master
         with:
-          artifact-name: grimoire-elk-public-inbox-dist
+          artifact-name: bap-elk-backends-dist
           artifact-path: dist
           pypi-api-token: ${{ secrets.PYPI_API_TOKEN }}

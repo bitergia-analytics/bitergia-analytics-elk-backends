@@ -1,6 +1,8 @@
-# GrimoireELK public-inbox plugin
+# Bitergia Analytics GrimoireELK backends
 
-public-inbox archive plugin for GrimoireELK. 
+GrimoireELK backends installed in Bitergia Analytics:
+- **public-inbox**: software for efficiently managing and archiving public mailing
+lists using Git repositories.
 
 ## Requirements
 
