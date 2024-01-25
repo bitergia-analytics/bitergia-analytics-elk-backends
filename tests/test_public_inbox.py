@@ -25,8 +25,8 @@ import unittest
 
 from base import TestBaseBackend
 
-from grimoire_elk_public_inbox.raw.public_inbox import PublicInboxOcean
-from grimoire_elk_public_inbox.enriched.public_inbox import PublicInboxEnrich
+from bap_elk_backends.raw.public_inbox import PublicInboxOcean
+from bap_elk_backends.enriched.public_inbox import PublicInboxEnrich
 from grimoire_elk.enriched.utils import REPO_LABELS
 
 

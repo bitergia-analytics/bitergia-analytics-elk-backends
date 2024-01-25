@@ -1,16 +1,16 @@
 [tool.poetry]
-name = "grimoire-elk-public-inbox"
+name = "bap-elk-backends"
 version = "0.1.8"
 description = "GrimoireELK plugic for public-inbox."
 authors = [
-    "GrimoireLab Developers"
+    "Bitergia Developers"
 ]
 license = "GPL-3.0+"
 
 readme = "README.md"
 
 homepage = "https://chaoss.github.io/grimoirelab/"
-repository = "https://github.com/bitergia-analytics/grimoirelab-elk-public-inbox"
+repository = "https://github.com/bitergia-analytics/bitergia-analytics-elk-backends"
 
 keywords = [
     "development",
@@ -18,7 +18,7 @@ keywords = [
 ]
 
 packages = [
-    { include = "grimoire_elk_public_inbox" },
+    { include = "bap_elk_backends" },
 ]
 
 include = [
@@ -37,10 +37,10 @@ classifiers = [
 ]
 
 [tool.poetry.plugins."grimoire_elk"]
-public_inbox = 'grimoire_elk_public_inbox.utils:get_connectors'
+bap_elk_backends = 'bap_elk_backends.utils:get_connectors'
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/bitergia-analytics/grimoirelab-elk-public-inbox/issues"
+"Bug Tracker" = "https://github.com/bitergia-analytics/bitergia-analytics-elk-backends/issues"
 
 [tool.poetry.dependencies]
 python = "^3.8"
