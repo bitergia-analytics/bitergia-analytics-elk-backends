@@ -2,6 +2,9 @@
     "grimoire": {
         "public_inbox": [
             "metrics-grimoire /home/bitergia/.perceval/public_inbox"
+        ],
+        "topicbox": [
+            "https://example.com/groups/test_group"
         ]
     }
 }
