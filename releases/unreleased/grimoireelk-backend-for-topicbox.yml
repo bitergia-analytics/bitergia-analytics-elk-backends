@@ -1,0 +1,15 @@
+---
+title: GrimoireELK backend for Topicbox
+category: added
+author: Jose Javier Merchante <jjmerchante@bitergia.com>
+issue: null
+notes: |
+  Create new backend to store Topicbox data in OpenSearch.
+  The new section for SirMordred is:
+  ```
+  [topicbox]
+  raw_index = topicbox_raw
+  enriched_index = topicbox_enriched
+  account-id = <account_id>
+  ```
+
