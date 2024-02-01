@@ -567,13 +567,13 @@ sftp = ["paramiko (>=1.15)"]
 
 [[package]]
 name = "django-treebeard"
-version = "4.7"
+version = "4.7.1"
 description = "Efficient tree implementations for Django"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "django-treebeard-4.7.tar.gz", hash = "sha256:c751a3f924158c288fea89afc25a7151979faf01bf11fdc7be3b858099dfa56d"},
-    {file = "django_treebeard-4.7-py3-none-any.whl", hash = "sha256:787117995ff985d98e6c2b241ef6b9d37fe8ff7051cd7535c283616a0b5b2645"},
+    {file = "django-treebeard-4.7.1.tar.gz", hash = "sha256:846e462904b437155f76e04907ba4e48480716855f88b898df4122bdcfbd6e98"},
+    {file = "django_treebeard-4.7.1-py3-none-any.whl", hash = "sha256:995c7120153ab999898fe3043bbdcd8a0fc77cc106eb94de7350e9d02c885135"},
 ]
 
 [package.dependencies]
@@ -977,13 +977,13 @@ grpc = ["grpcio (>=1.44.0,<2.0.0.dev0)"]
 
 [[package]]
 name = "graal"
-version = "0.4.20"
+version = "0.4.21"
 description = "A generic source code analyzer"
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "graal-0.4.20-py3-none-any.whl", hash = "sha256:25e6de7642f11ece461b3f3814dd27a181c8b68543f2abeed4ed065394b3528f"},
-    {file = "graal-0.4.20.tar.gz", hash = "sha256:74833a353dd9c7c387ddf92e4604ee05236c7da16312e101a90fd674b83fdf19"},
+    {file = "graal-0.4.21-py3-none-any.whl", hash = "sha256:50cf811a24f05bbe336ecf0d3c99a61318ebc1719fe7968b093101648ec30a87"},
+    {file = "graal-0.4.21.tar.gz", hash = "sha256:86c2b449f0037e4d2b55408490cce85d6e265ef78bae63e6ff050daac6efeaa4"},
 ]
 
 [package.dependencies]
@@ -1083,13 +1083,13 @@ six = ">=1.12"
 
 [[package]]
 name = "grimoire-elk"
-version = "0.109.5"
+version = "0.109.6"
 description = "GrimoireELK processes and stores software development data to ElasticSearch"
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "grimoire_elk-0.109.5-py3-none-any.whl", hash = "sha256:f22ec15a8326494fe2533d216c0e5ff886e91b3278667917e3e3249899035533"},
-    {file = "grimoire_elk-0.109.5.tar.gz", hash = "sha256:80bc57c57dafec8f13c42436fcc13e8d16b66d3be7518c22b47a1c83a5cde3c9"},
+    {file = "grimoire_elk-0.109.6-py3-none-any.whl", hash = "sha256:d658153c104218b9a3db24d6441292bfb65fb60fb9263c6f769d9f429e82a901"},
+    {file = "grimoire_elk-0.109.6.tar.gz", hash = "sha256:3d556692566072edef37d776e22d54e0f2f8452d397b18696f61c25d0d625a71"},
 ]
 
 [package.dependencies]
@@ -2124,13 +2124,13 @@ files = [
 
 [[package]]
 name = "sortinghat"
-version = "0.19.0"
+version = "0.19.1"
 description = "A tool to manage identities."
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "sortinghat-0.19.0-py3-none-any.whl", hash = "sha256:3c8b77d4cfdf9070f39a4d2883468c40c1f804a1d1e4a45a31e7d41c447b1451"},
-    {file = "sortinghat-0.19.0.tar.gz", hash = "sha256:27d3db6a19ff92c2f7d1c7377582ce12f8bfa402e3486db24d0669bab7ffc3f9"},
+    {file = "sortinghat-0.19.1-py3-none-any.whl", hash = "sha256:612fcc735af4378dd7ee0ab4107fdcdcd0a7215d7e653347e9553dcd9ec4f8c4"},
+    {file = "sortinghat-0.19.1.tar.gz", hash = "sha256:584143b11c1b4c4a2dbf4947686fa916c52a15b4e63d27659de74b3b3e07c408"},
 ]
 
 [package.dependencies]
