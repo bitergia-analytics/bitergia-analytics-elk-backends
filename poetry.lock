@@ -777,13 +777,13 @@ timezone = ["pytz"]
 
 [[package]]
 name = "google-api-core"
-version = "2.16.2"
+version = "2.17.0"
 description = "Google API client core library"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "google-api-core-2.16.2.tar.gz", hash = "sha256:032d37b45d1d6bdaf68fb11ff621e2593263a239fa9246e2e94325f9c47876d2"},
-    {file = "google_api_core-2.16.2-py3-none-any.whl", hash = "sha256:449ca0e3f14c179b4165b664256066c7861610f70b6ffe54bb01a04e9b466929"},
+    {file = "google-api-core-2.17.0.tar.gz", hash = "sha256:de7ef0450faec7c75e0aea313f29ac870fdc44cfaec9d6499a9a17305980ef66"},
+    {file = "google_api_core-2.17.0-py3-none-any.whl", hash = "sha256:08ed79ed8e93e329de5e3e7452746b734e6bf8438d8d64dd3319d21d3164890c"},
 ]
 
 [package.dependencies]
@@ -1565,13 +1565,13 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-public-inbox"
-version = "0.1.10rc1"
+version = "0.1.10"
 description = "Perceval backend for public-inbox."
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "perceval_public_inbox-0.1.10rc1-py3-none-any.whl", hash = "sha256:d1cd8f232e3bfabc180c9c80460411c2364ca1af76a3a653ed68ef72e9bf2bdd"},
-    {file = "perceval_public_inbox-0.1.10rc1.tar.gz", hash = "sha256:d238630465e16cb5983dd5f214d76ecf0fff6b942a16d5c99d2c2b14f9099846"},
+    {file = "perceval_public_inbox-0.1.10-py3-none-any.whl", hash = "sha256:da6d235022c4f3c007618e70d5627e5a59f65762c216a250a211947ff18ffe71"},
+    {file = "perceval_public_inbox-0.1.10.tar.gz", hash = "sha256:c4f5816b4fb304ed3fb1faffbd49af3f283b7b79137ab64c0ae0eac17b88f47a"},
 ]
 
 [package.dependencies]
@@ -1598,13 +1598,13 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-topicbox"
-version = "0.1.1rc1"
+version = "0.1.1"
 description = "Perceval backend for Topicbox"
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "perceval_topicbox-0.1.1rc1-py3-none-any.whl", hash = "sha256:6877a8b30530e6dc16fb5737e95a2712afbe51ff12dff0430f25e155cafa5399"},
-    {file = "perceval_topicbox-0.1.1rc1.tar.gz", hash = "sha256:ad67cc84e99433ce8e74e40f159edb07c3b7fd156d8e721da93a9e26735ddf84"},
+    {file = "perceval_topicbox-0.1.1-py3-none-any.whl", hash = "sha256:a977466d0c574d3572499d6ee3183a555c361f6cd0c3fa7d2df7107ee52e9b66"},
+    {file = "perceval_topicbox-0.1.1.tar.gz", hash = "sha256:9351b8088fbc0a3d20edcafd29ac6a60bad07fb848a44b77cc21d4744f211bcb"},
 ]
 
 [package.dependencies]
@@ -2355,12 +2355,12 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "uwsgi"
-version = "2.0.23"
+version = "2.0.24"
 description = "The uWSGI server"
 optional = false
 python-versions = "*"
 files = [
-    {file = "uwsgi-2.0.23.tar.gz", hash = "sha256:0cafda0c16f921db7fe42cfaf81b167cf884ee17350efbdd87d1ecece2d7de37"},
+    {file = "uwsgi-2.0.24.tar.gz", hash = "sha256:77b6dd5cd633f4ae87ee393f7701f617736815499407376e78f3d16467523afe"},
 ]
 
 [[package]]
