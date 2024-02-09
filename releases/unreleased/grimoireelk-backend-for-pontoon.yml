@@ -1,0 +1,22 @@
+---
+title: GrimoireELK backend for Pontoon
+category: added
+author: Jose Javier Merchante <jjmerchante@bitergia.com>
+issue: null
+notes: |
+  Create new backend to store Pontoon data in OpenSearch.
+  The new section for SirMordred is:
+  ```
+  [pontoon]
+  raw_index = pontoon_raw
+  enriched_index = pontoon_enriched
+  ```
+  In the `projects.json` file should be included a URL and a
+  locale with the following format:
+  ```
+  {
+    "pontoon": [
+      "https://pontoon.example.org es"    
+    ]
+  }
+  ```

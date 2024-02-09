@@ -5,6 +5,9 @@
         ],
         "topicbox": [
             "https://example.com/groups/test_group"
+        ],
+        "pontoon": [
+            "https://pontoon.example.com/ a"
         ]
     }
 }

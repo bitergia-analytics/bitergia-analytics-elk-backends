@@ -5,6 +5,8 @@ GrimoireELK backends installed in Bitergia Analytics:
 lists using Git repositories.
 - **Topicbox**: email discussion platform that facilitates organized group
 communication through dedicated email groups.
+- **Pontoon**: web-based localization platform that facilitates collaborative
+translation of software and documentation
 
 ## Requirements
 
