@@ -21,14 +21,18 @@
 
 from perceval.backends.public_inbox.public_inbox import PublicInbox, PublicInboxCommand
 from perceval.backends.topicbox.topicbox import Topicbox, TopicboxCommand
+from perceval.backends.pontoon.pontoon import Pontoon, PontoonCommand
 from .enriched.public_inbox import PublicInboxEnrich
 from .enriched.topicbox import TopicboxEnrich
+from .enriched.pontoon import PontoonEnrich
 from .raw.public_inbox import PublicInboxOcean
 from .raw.topicbox import TopicboxOcean
+from .raw.pontoon import PontoonOcean
 
 
 def get_connectors():
     return {
         "public_inbox": [PublicInbox, PublicInboxOcean, PublicInboxEnrich, PublicInboxCommand],
-        "topicbox": [Topicbox, TopicboxOcean, TopicboxEnrich, TopicboxCommand]
+        "topicbox": [Topicbox, TopicboxOcean, TopicboxEnrich, TopicboxCommand],
+        "pontoon": [Pontoon, PontoonOcean, PontoonEnrich, PontoonCommand]
     }

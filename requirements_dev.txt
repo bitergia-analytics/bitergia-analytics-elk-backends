@@ -1,3 +1,5 @@
 -e git+https://github.com/chaoss/grimoirelab-cereslib/#egg=cereslib
 -e git+https://github.com/chaoss/grimoirelab-elk/#egg=grimoire-elk
 -e git+https://github.com/bitergia-analytics/grimoirelab-perceval-public-inbox.git/#egg=perceval-public-inbox
+-e git+https://github.com/bitergia-analytics/grimoirelab-perceval-topicbox.git/#egg=perceval-topicbox
+-e git+https://github.com/bitergia-analytics/grimoirelab-perceval-pontoon.git/#egg=perceval-pontoon

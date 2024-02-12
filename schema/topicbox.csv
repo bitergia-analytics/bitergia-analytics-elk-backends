@@ -9,7 +9,7 @@ author_org_name,keyword
 author_uuid,keyword
 body_extract,keyword
 Date,keyword
-SSSemail_date,date
+email_date,date
 from_bot,boolean
 from_domain,keyword
 from_gender,keyword
