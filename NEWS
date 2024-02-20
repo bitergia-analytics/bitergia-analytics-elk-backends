@@ -1,5 +1,17 @@
 # Releases
 
+## bap-elk-backends 0.3.0 - (2024-02-20)
+
+**New features:**
+
+ * GrimoireELK backend for Pontoon\
+   Create new backend to store Pontoon data in OpenSearch. The new
+   section for SirMordred is: ``` [pontoon] raw_index = pontoon_raw
+   enriched_index = pontoon_enriched ``` In the `projects.json` file
+   should be included a URL and a locale with the following format: ``` {
+   "pontoon": [     "https://pontoon.example.org es"       ] } ```
+
+
   ## bap-elk-backends 0.2.2 - (2024-02-08)
   
   * Update Poetry's package dependencies
