@@ -1565,13 +1565,13 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-pontoon"
-version = "0.1.0rc2"
+version = "0.1.0"
 description = "Perceval backend for Pontoon"
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "perceval_pontoon-0.1.0rc2-py3-none-any.whl", hash = "sha256:ac657f02be55adf2dec9c5e18f3f4dc16c0914d55a1e1728b30ce3ba7fd9577e"},
-    {file = "perceval_pontoon-0.1.0rc2.tar.gz", hash = "sha256:1816472754c892275383ab556512d03d552d312874ae16a591c4b2244b6f27e0"},
+    {file = "perceval_pontoon-0.1.0-py3-none-any.whl", hash = "sha256:94d1bc174e5fa1a12c9cb74d16ae83e101bc47e30e71400826dd0b68bbec1e00"},
+    {file = "perceval_pontoon-0.1.0.tar.gz", hash = "sha256:9044893bf4dab44d4842d3b1246ea62760f22a8b136ce8a26898b134be93eafd"},
 ]
 
 [package.dependencies]
