@@ -71,6 +71,7 @@ translation_uid,number
 translation_user,string
 translation_username,string
 translation_warnings,number
+url,string
 user_bot,boolean
 user_domain,string
 user_gender,string

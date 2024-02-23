@@ -52,6 +52,10 @@ class Mapping(BaseMapping):
                                     "index": true
                                 }
                             }
+                        },
+                        "source": {
+                            "type": "object",
+                            "enabled": false
                         }
                     }
                 }
