@@ -26,6 +26,7 @@ from grimoire_elk.enriched.enrich import Enrich, metadata
 from grimoirelab_toolkit.datetime import str_to_datetime
 from grimoirelab_toolkit.uris import urijoin
 
+
 logger = logging.getLogger(__name__)
 
 

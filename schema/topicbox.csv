@@ -39,5 +39,8 @@ Subject_analyzed,text
 Subject,keyword
 tag,keyword
 thread,keyword
+thread_url,keyword
+topicbox_message_id,keyword
 tz,long
+url,keyword
 uuid,keyword

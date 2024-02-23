@@ -22,6 +22,7 @@
 from grimoire_elk.elastic_mapping import Mapping as BaseMapping
 from grimoire_elk.enriched.enrich import Enrich, metadata
 from grimoirelab_toolkit.datetime import str_to_datetime
+from grimoirelab_toolkit.uris import urijoin
 
 
 class Mapping(BaseMapping):
@@ -80,6 +81,8 @@ class TopicboxEnrich(Enrich):
         identity['username'] = None
         identity['email'] = user['email']
         identity['name'] = user['name']
+        if not identity['name'] and identity['email']:
+            identity['name'] = identity['email'].split('@')[0]
         return identity
 
     def get_project_repository(self, eitem):
@@ -97,9 +100,12 @@ class TopicboxEnrich(Enrich):
         eitem['Subject'] = message['subject'][:self.KEYWORD_MAX_LENGTH]
         eitem['Subject_analyzed'] = message['subject']
         eitem['Message-ID'] = message['messageId'][0]
+        eitem['topicbox_message_id'] = message['id']
         eitem["email_date"] = str_to_datetime(item["metadata__updated_on"]).isoformat()
         eitem["list"] = item["origin"]
         eitem["root"] = bool('inReplyTo' in message and message['inReplyTo'])
+        eitem["thread_url"] = urijoin(item['origin'], message['threadId'])
+        eitem["url"] = f"{eitem['thread_url']}-{message['id']}"
 
         eitem["body_extract"] = message['preview']
         if message['textBody']:
