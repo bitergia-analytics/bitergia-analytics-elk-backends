@@ -24,6 +24,7 @@ import logging
 from grimoire_elk.elastic_mapping import Mapping as BaseMapping
 from grimoire_elk.enriched.enrich import Enrich, metadata
 from grimoirelab_toolkit.datetime import str_to_datetime
+from grimoirelab_toolkit.uris import urijoin
 
 
 logger = logging.getLogger(__name__)
@@ -144,9 +145,11 @@ class PontoonEnrich(Enrich):
         eitem['resource_comment'] = entity['resource_comment']
         eitem['order'] = entity['order']
         eitem['obsolete'] = entity['obsolete']
-        eitem['source'] = entity['source']
         eitem['readonly'] = entity['readonly']
         eitem['entity_date'] = str_to_datetime(entity['date_created']).isoformat()
+        url = urijoin(item['origin'], entity['project']['slug'], entity['path'])
+        url += f"?string={entity['pk']}"
+        eitem['url'] = url
 
         eitem['translation_pk'] = translation['pk']
         eitem['string'] = translation['string'][:self.KEYWORD_MAX_LENGTH]

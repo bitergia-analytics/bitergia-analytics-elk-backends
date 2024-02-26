@@ -74,6 +74,8 @@ class TestPontoon(TestBaseBackend):
         self.assertTrue(eitem['approved'])
         self.assertEqual(eitem['approved_user'], 'user_approve')
         self.assertEqual(eitem['user'], 'user1')
+        self.assertEqual(eitem['url'],
+                         'https://pontoon.example.com/es/amo/LC_MESSAGES/djangojs.po?string=280952')
 
         eitem = eitems[1]
         self.assertEqual(eitem['origin'], 'https://pontoon.example.com/es')
@@ -88,6 +90,8 @@ class TestPontoon(TestBaseBackend):
         self.assertFalse(eitem['approved'])
         self.assertEqual(eitem['approved_user'], '')
         self.assertEqual(eitem['user'], 'user2')
+        self.assertEqual(eitem['url'],
+                         'https://pontoon.example.com/es/amo/LC_MESSAGES/djangojs.po?string=280952')
 
         item = self.items[1]
         eitems = enrich_backend.enrich_translations(item)
@@ -105,6 +109,8 @@ class TestPontoon(TestBaseBackend):
         self.assertFalse(eitem['approved'])
         self.assertEqual(eitem['approved_user'], '')
         self.assertEqual(eitem['user'], 'user1')
+        self.assertEqual(eitem['url'],
+                         'https://pontoon.example.com/es/amo/LC_MESSAGES/django.po?string=292898')
 
     def test_enrich_repo_labels(self):
         """Test whether the field REPO_LABELS is present in the enriched items"""

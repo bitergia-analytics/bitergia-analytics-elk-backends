@@ -63,40 +63,55 @@ class TestTopicbox(TestBaseBackend):
         self.assertEqual(eitem['origin'], 'https://example.com/groups/test_group')
         self.assertEqual(eitem['Subject'], 'Subject 1')
         self.assertEqual(eitem['Message-ID'], 'item1@topicbox.com')
+        self.assertEqual(eitem['topicbox_message_id'], 'Mtest1')
         self.assertEqual(eitem['root'], False)
         self.assertEqual(eitem['thread'], 'thread1')
+        self.assertEqual(eitem['thread_url'], 'https://example.com/groups/test_group/thread1')
+        self.assertEqual(eitem['url'], 'https://example.com/groups/test_group/thread1-Mtest1')
 
         item = self.items[1]
         eitem = enrich_backend.get_rich_item(item)
         self.assertEqual(eitem['origin'], 'https://example.com/groups/test_group')
         self.assertEqual(eitem['Subject'], 'Subject 2')
         self.assertEqual(eitem['Message-ID'], 'item2@topicbox.com')
+        self.assertEqual(eitem['topicbox_message_id'], 'Mtest2')
         self.assertEqual(eitem['root'], False)
         self.assertEqual(eitem['thread'], 'Thread2')
+        self.assertEqual(eitem['thread_url'], 'https://example.com/groups/test_group/Thread2')
+        self.assertEqual(eitem['url'], 'https://example.com/groups/test_group/Thread2-Mtest2')
 
         item = self.items[2]
         eitem = enrich_backend.get_rich_item(item)
         self.assertEqual(eitem['origin'], 'https://example.com/groups/test_group')
         self.assertEqual(eitem['Subject'], 'Subject 3')
         self.assertEqual(eitem['Message-ID'], 'item3@topicbox.com')
+        self.assertEqual(eitem['topicbox_message_id'], 'Mtest3')
         self.assertEqual(eitem['root'], False)
         self.assertEqual(eitem['thread'], 'Thread3')
+        self.assertEqual(eitem['thread_url'], 'https://example.com/groups/test_group/Thread3')
+        self.assertEqual(eitem['url'], 'https://example.com/groups/test_group/Thread3-Mtest3')
 
         item = self.items[3]
         eitem = enrich_backend.get_rich_item(item)
         self.assertEqual(eitem['origin'], 'https://example.com/groups/test_group')
         self.assertEqual(eitem['Subject'], 'Subject 4')
         self.assertEqual(eitem['Message-ID'], 'item4@topicbox.com')
+        self.assertEqual(eitem['topicbox_message_id'], 'Mtest4')
         self.assertEqual(eitem['root'], True)
         self.assertEqual(eitem['thread'], 'Thread3')
+        self.assertEqual(eitem['thread_url'], 'https://example.com/groups/test_group/Thread3')
+        self.assertEqual(eitem['url'], 'https://example.com/groups/test_group/Thread3-Mtest4')
 
         item = self.items[4]
         eitem = enrich_backend.get_rich_item(item)
         self.assertEqual(eitem['origin'], 'https://example.com/groups/test_group')
         self.assertEqual(eitem['Subject'], 'Subject 5')
         self.assertEqual(eitem['Message-ID'], 'item5@topicbox.com')
+        self.assertEqual(eitem['topicbox_message_id'], 'Mtest5')
         self.assertEqual(eitem['root'], True)
         self.assertEqual(eitem['thread'], 'Thread3')
+        self.assertEqual(eitem['thread_url'], 'https://example.com/groups/test_group/Thread3')
+        self.assertEqual(eitem['url'], 'https://example.com/groups/test_group/Thread3-Mtest5')
 
     def test_enrich_repo_labels(self):
         """Test whether the field REPO_LABELS is present in the enriched items"""
