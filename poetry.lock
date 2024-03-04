@@ -1565,13 +1565,13 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-pontoon"
-version = "0.1.1rc1"
+version = "0.1.1"
 description = "Perceval backend for Pontoon"
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "perceval_pontoon-0.1.1rc1-py3-none-any.whl", hash = "sha256:d97a8e1966caf9f33184ded730dbf365de22304ac43031bd53f7a4f264b3f009"},
-    {file = "perceval_pontoon-0.1.1rc1.tar.gz", hash = "sha256:9a2fd220c3602280b052287a11f783327d7426c6dffc1a6b66d08f4ce56bf916"},
+    {file = "perceval_pontoon-0.1.1-py3-none-any.whl", hash = "sha256:cdd727cc93fbf179ab173abf03ba74e98bfea4c09d3afc44a1b464cdaf10baf0"},
+    {file = "perceval_pontoon-0.1.1.tar.gz", hash = "sha256:4e36301c8b9eff02a07936adb28398fd577186e5ea6332c1c3579864860ed893"},
 ]
 
 [package.dependencies]
@@ -1580,13 +1580,13 @@ perceval = ">=0.19"
 
 [[package]]
 name = "perceval-public-inbox"
-version = "0.1.11rc1"
+version = "0.1.11"
 description = "Perceval backend for public-inbox."
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "perceval_public_inbox-0.1.11rc1-py3-none-any.whl", hash = "sha256:d67b3bb9af2a161ba88b68cc52b69aa00b297955f4cd2978454ac65732995453"},
-    {file = "perceval_public_inbox-0.1.11rc1.tar.gz", hash = "sha256:82201938a332837527a7051650115d90b5671f9a3137524c2e0f98f6d06d9336"},
+    {file = "perceval_public_inbox-0.1.11-py3-none-any.whl", hash = "sha256:576b31af220e8aa861d8fafe917694a87eb07bc66295e90371fb9d14b0e18eca"},
+    {file = "perceval_public_inbox-0.1.11.tar.gz", hash = "sha256:f3294b3775db7d77ca022d5018f4cf651e2adbd2f762f003e52243ab9ce03cda"},
 ]
 
 [package.dependencies]
@@ -1613,13 +1613,13 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-topicbox"
-version = "0.1.2rc1"
+version = "0.1.2"
 description = "Perceval backend for Topicbox"
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "perceval_topicbox-0.1.2rc1-py3-none-any.whl", hash = "sha256:e7a90667b8c9678da36aa6c97507e9daf760381626ea5e6e9685035b9e343f65"},
-    {file = "perceval_topicbox-0.1.2rc1.tar.gz", hash = "sha256:9f41519dcd313e84b4ae921fee7df08d5363bc6b21f295b34cf923065213b627"},
+    {file = "perceval_topicbox-0.1.2-py3-none-any.whl", hash = "sha256:d230d569dbf3a2b2a6c2479d48561e328622cdd935e01c184703cfc6e4e2b7bf"},
+    {file = "perceval_topicbox-0.1.2.tar.gz", hash = "sha256:6fad43ac63a998e323a688fb9003d86163c81631e86680ab5c80ce63699ac10c"},
 ]
 
 [package.dependencies]
