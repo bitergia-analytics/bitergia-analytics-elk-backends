@@ -53,6 +53,12 @@ class TopicboxEnrich(Enrich):
 
     mapping = Mapping
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.studies = []
+        self.studies.append(self.enrich_demography)
+
     def get_field_author(self):
         return "from"
 
@@ -103,7 +109,7 @@ class TopicboxEnrich(Enrich):
         eitem['topicbox_message_id'] = message['id']
         eitem["email_date"] = str_to_datetime(item["metadata__updated_on"]).isoformat()
         eitem["list"] = item["origin"]
-        eitem["root"] = bool('inReplyTo' in message and message['inReplyTo'])
+        eitem["root"] = not bool('inReplyTo' in message and message['inReplyTo'])
         eitem["thread_url"] = urijoin(item['origin'], message['threadId'])
         eitem["url"] = f"{eitem['thread_url']}-{message['id']}"
 
@@ -121,6 +127,7 @@ class TopicboxEnrich(Enrich):
             eitem["tz"] = None
 
         eitem['thread'] = message['threadId']
+        eitem['group'] = item["origin"].strip('/').split('/')[-1]
 
         if self.sortinghat:
             eitem.update(self.get_item_sh(item))

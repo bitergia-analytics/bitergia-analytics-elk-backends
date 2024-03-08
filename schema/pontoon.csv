@@ -53,6 +53,7 @@ rejected_user_org_name,string
 rejected_user_user_name,string
 rejected_user_uuid,string
 resource_comment,string
+review_status,keyword
 tag,string
 translation_approved,boolean
 translation_approved_user,string

@@ -21,6 +21,7 @@ from_org_name,keyword
 from_uuid,keyword
 from_user_name,keyword
 grimoire_creation_date,date
+group,keyword
 is_topicbox_message,long
 list,keyword
 Message-ID,keyword

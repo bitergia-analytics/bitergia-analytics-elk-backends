@@ -1,12 +1,84 @@
 # Bitergia Analytics GrimoireELK backends
 
-GrimoireELK backends installed in Bitergia Analytics:
-- **public-inbox**: software for efficiently managing and archiving public mailing
+GrimoireELK backends available in Bitergia Analytics:
+### public-inbox
+
+Software for efficiently managing and archiving public mailing
 lists using Git repositories.
-- **Topicbox**: email discussion platform that facilitates organized group
+- `projects.json`
+```
+{
+    "linux": {
+        "public_inbox": [
+            "linux /path/to/mirror/repository"
+        ]
+    }
+}
+```
+
+- `setup.cfg`
+```
+[public_inbox]
+raw_index = public_inbox_raw
+enriched_index = public_inbox_enriched
+latest-items = false
+```
+
+### Topicbox
+
+Email discussion platform that facilitates organized group
 communication through dedicated email groups.
-- **Pontoon**: web-based localization platform that facilitates collaborative
+
+- `projects.json`
+```
+{
+    "Example": {
+        "topicbox": [
+            "https://example.topicbox.com/groups/group-1",
+            "https://example.topicbox.com/groups/group-2"
+        ]
+    }
+}
+```
+
+- `setup.cfg`
+```
+[topicbox]
+raw_index = topicbox_raw
+enriched_index = topicbox_enriched
+account-id = xxxx  # Look into the Perceval backend
+studies = [ enrich_demography:topicbox ]  # (optional)
+
+[enrich_demography:topicbox]  # (optional)
+```
+
+### Pontoon
+
+Web-based localization platform that facilitates collaborative
 translation of software and documentation
+
+- `projects.json`
+```
+{
+    "Example": {
+        "pontoon": [
+            "https://pontoon.mozilla.org af",
+            "https://pontoon.mozilla.org es"
+        ]
+    }
+}
+```
+
+- `setup.cfg`
+```
+[pontoon]
+raw_index = pontoon_raw
+enriched_index = pontoon_enriched
+studies = [ enrich_demography:pontoon ]  # (optional)
+
+[enrich_demography:pontoon]  # (optional)
+```
+
 
 ## Requirements
 

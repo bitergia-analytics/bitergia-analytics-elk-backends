@@ -21,12 +21,15 @@
 #
 
 import logging
+import time
 import unittest
 
 from base import TestBaseBackend
 
 from bap_elk_backends.enriched.topicbox import TopicboxEnrich
 from grimoire_elk.enriched.utils import REPO_LABELS
+from grimoire_elk.enriched.enrich import (logger,
+                                          anonymize_url)
 
 
 class TestTopicbox(TestBaseBackend):
@@ -64,10 +67,11 @@ class TestTopicbox(TestBaseBackend):
         self.assertEqual(eitem['Subject'], 'Subject 1')
         self.assertEqual(eitem['Message-ID'], 'item1@topicbox.com')
         self.assertEqual(eitem['topicbox_message_id'], 'Mtest1')
-        self.assertEqual(eitem['root'], False)
+        self.assertEqual(eitem['root'], True)
         self.assertEqual(eitem['thread'], 'thread1')
         self.assertEqual(eitem['thread_url'], 'https://example.com/groups/test_group/thread1')
         self.assertEqual(eitem['url'], 'https://example.com/groups/test_group/thread1-Mtest1')
+        self.assertEqual(eitem['group'], 'test_group')
 
         item = self.items[1]
         eitem = enrich_backend.get_rich_item(item)
@@ -75,10 +79,11 @@ class TestTopicbox(TestBaseBackend):
         self.assertEqual(eitem['Subject'], 'Subject 2')
         self.assertEqual(eitem['Message-ID'], 'item2@topicbox.com')
         self.assertEqual(eitem['topicbox_message_id'], 'Mtest2')
-        self.assertEqual(eitem['root'], False)
+        self.assertEqual(eitem['root'], True)
         self.assertEqual(eitem['thread'], 'Thread2')
         self.assertEqual(eitem['thread_url'], 'https://example.com/groups/test_group/Thread2')
         self.assertEqual(eitem['url'], 'https://example.com/groups/test_group/Thread2-Mtest2')
+        self.assertEqual(eitem['group'], 'test_group')
 
         item = self.items[2]
         eitem = enrich_backend.get_rich_item(item)
@@ -86,10 +91,11 @@ class TestTopicbox(TestBaseBackend):
         self.assertEqual(eitem['Subject'], 'Subject 3')
         self.assertEqual(eitem['Message-ID'], 'item3@topicbox.com')
         self.assertEqual(eitem['topicbox_message_id'], 'Mtest3')
-        self.assertEqual(eitem['root'], False)
+        self.assertEqual(eitem['root'], True)
         self.assertEqual(eitem['thread'], 'Thread3')
         self.assertEqual(eitem['thread_url'], 'https://example.com/groups/test_group/Thread3')
         self.assertEqual(eitem['url'], 'https://example.com/groups/test_group/Thread3-Mtest3')
+        self.assertEqual(eitem['group'], 'test_group')
 
         item = self.items[3]
         eitem = enrich_backend.get_rich_item(item)
@@ -97,10 +103,11 @@ class TestTopicbox(TestBaseBackend):
         self.assertEqual(eitem['Subject'], 'Subject 4')
         self.assertEqual(eitem['Message-ID'], 'item4@topicbox.com')
         self.assertEqual(eitem['topicbox_message_id'], 'Mtest4')
-        self.assertEqual(eitem['root'], True)
+        self.assertEqual(eitem['root'], False)
         self.assertEqual(eitem['thread'], 'Thread3')
         self.assertEqual(eitem['thread_url'], 'https://example.com/groups/test_group/Thread3')
         self.assertEqual(eitem['url'], 'https://example.com/groups/test_group/Thread3-Mtest4')
+        self.assertEqual(eitem['group'], 'test_group')
 
         item = self.items[4]
         eitem = enrich_backend.get_rich_item(item)
@@ -108,10 +115,11 @@ class TestTopicbox(TestBaseBackend):
         self.assertEqual(eitem['Subject'], 'Subject 5')
         self.assertEqual(eitem['Message-ID'], 'item5@topicbox.com')
         self.assertEqual(eitem['topicbox_message_id'], 'Mtest5')
-        self.assertEqual(eitem['root'], True)
+        self.assertEqual(eitem['root'], False)
         self.assertEqual(eitem['thread'], 'Thread3')
         self.assertEqual(eitem['thread_url'], 'https://example.com/groups/test_group/Thread3')
         self.assertEqual(eitem['url'], 'https://example.com/groups/test_group/Thread3-Mtest5')
+        self.assertEqual(eitem['group'], 'test_group')
 
     def test_enrich_repo_labels(self):
         """Test whether the field REPO_LABELS is present in the enriched items"""
@@ -180,6 +188,30 @@ class TestTopicbox(TestBaseBackend):
                     self.assertEqual(item[attribute], eitem[attribute])
                 else:
                     self.assertIsNone(eitem[attribute])
+
+    def test_demography_study(self):
+        """ Test that the demography study works correctly """
+
+        alias = 'demographics'
+        study, ocean_backend, enrich_backend = self._test_study('enrich_demography')
+
+        with self.assertLogs(logger, level='INFO') as cm:
+            if study.__name__ == "enrich_demography":
+                study(ocean_backend, enrich_backend, alias)
+
+            self.assertEqual(cm.output[0], 'INFO:grimoire_elk.enriched.enrich:[topicbox] Demography '
+                                           'starting study %s/test_topicbox_enrich'
+                             % anonymize_url(self.es_con))
+            self.assertEqual(cm.output[-1], 'INFO:grimoire_elk.enriched.enrich:[topicbox] Demography '
+                                            'end %s/test_topicbox_enrich'
+                             % anonymize_url(self.es_con))
+
+        time.sleep(5)  # HACK: Wait until topicbox enrich index has been written
+        items = [item for item in enrich_backend.fetch()]
+        self.assertEqual(len(items), 5)
+        for item in items:
+            self.assertTrue('demography_min_date' in item.keys())
+            self.assertTrue('demography_max_date' in item.keys())
 
 
 if __name__ == "__main__":

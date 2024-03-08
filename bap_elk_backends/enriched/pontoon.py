@@ -74,6 +74,12 @@ class PontoonEnrich(Enrich):
 
     translation_roles = ['user', 'approved_user', 'rejected_user']
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.studies = []
+        self.studies.append(self.enrich_demography)
+
     def get_field_author(self):
         return "user"
 
@@ -116,6 +122,19 @@ class PontoonEnrich(Enrich):
 
     def get_field_unique_id(self):
         return "id"
+
+    def get_review_status(self, translation):
+        if translation['user'] == 'Imported':
+            return 'imported'
+        if translation['approved']:
+            if translation['approved_user'] == translation['user']:
+                return 'self-approved'
+            else:
+                return 'peer-approved'
+        elif translation['rejected']:
+            return 'rejected'
+        else:
+            return 'unreviewed'
 
     @metadata
     def enrich_translation(self, translation, item):
@@ -168,6 +187,7 @@ class PontoonEnrich(Enrich):
         eitem['rejected_user'] = translation['rejected_user']
         eitem['comments'] = len(translation['comments'])
         eitem['machinery_sources'] = translation['machinery_sources']
+        eitem['review_status'] = self.get_review_status(translation)
 
         if self.sortinghat:
             eitem.update(self.get_item_sh(translation, self.translation_roles, 'date'))
