@@ -211,7 +211,7 @@
           "pk":9925882,
           "string":"Tu extensión tiene que ser compatible por lo menos con una aplicación.",
           "approved":false,
-          "rejected":false,
+          "rejected":true,
           "pretranslated":false,
           "fuzzy":false,
           "errors":[ ],
@@ -223,7 +223,7 @@
           "date":"Jan 03, 2024 21:18",
           "date_iso":"2024-01-03T21:18:12.371137+00:00",
           "approved_user":"",
-          "rejected_user":"",
+          "rejected_user":"user9",
           "comments":[ ],
           "machinery_sources":""
         },

@@ -21,12 +21,15 @@
 #
 
 import logging
+import time
 import unittest
 
 from base import TestBaseBackend
 
 from bap_elk_backends.enriched.pontoon import PontoonEnrich
 from grimoire_elk.enriched.utils import REPO_LABELS
+from grimoire_elk.enriched.enrich import (logger,
+                                          anonymize_url)
 
 
 class TestPontoon(TestBaseBackend):
@@ -72,8 +75,10 @@ class TestPontoon(TestBaseBackend):
         self.assertRegex(eitem['original'], 'Your extension has to be compatible.*')
         self.assertRegex(eitem['string'], 'Tu extensión tiene que ser compatible.*')
         self.assertTrue(eitem['approved'])
+        self.assertFalse(eitem['rejected'])
         self.assertEqual(eitem['approved_user'], 'user_approve')
         self.assertEqual(eitem['user'], 'user1')
+        self.assertEqual(eitem['review_status'], 'peer-approved')
         self.assertEqual(eitem['url'],
                          'https://pontoon.example.com/es/amo/LC_MESSAGES/djangojs.po?string=280952')
 
@@ -88,8 +93,10 @@ class TestPontoon(TestBaseBackend):
         self.assertRegex(eitem['original'], 'Your extension has to be compatible.*')
         self.assertRegex(eitem['string'], 'Tu extensión tiene que ser compatible.*.')
         self.assertFalse(eitem['approved'])
+        self.assertFalse(eitem['rejected'])
         self.assertEqual(eitem['approved_user'], '')
         self.assertEqual(eitem['user'], 'user2')
+        self.assertEqual(eitem['review_status'], 'unreviewed')
         self.assertEqual(eitem['url'],
                          'https://pontoon.example.com/es/amo/LC_MESSAGES/djangojs.po?string=280952')
 
@@ -107,8 +114,10 @@ class TestPontoon(TestBaseBackend):
         self.assertRegex(eitem['original'], 'Warning: the following manifest.*')
         self.assertRegex(eitem['string'], 'Tu extensión tiene que ser compatible.*')
         self.assertFalse(eitem['approved'])
+        self.assertTrue(eitem['rejected'])
         self.assertEqual(eitem['approved_user'], '')
         self.assertEqual(eitem['user'], 'user1')
+        self.assertEqual(eitem['review_status'], 'rejected')
         self.assertEqual(eitem['url'],
                          'https://pontoon.example.com/es/amo/LC_MESSAGES/django.po?string=292898')
 
@@ -181,6 +190,30 @@ class TestPontoon(TestBaseBackend):
                         self.assertEqual(item[attribute], eitem[attribute])
                     else:
                         self.assertIsNone(eitem[attribute])
+
+    def test_demography_study(self):
+        """ Test that the demography study works correctly """
+
+        alias = 'demographics'
+        study, ocean_backend, enrich_backend = self._test_study('enrich_demography')
+
+        with self.assertLogs(logger, level='INFO') as cm:
+            if study.__name__ == "enrich_demography":
+                study(ocean_backend, enrich_backend, alias)
+
+            self.assertEqual(cm.output[0], 'INFO:grimoire_elk.enriched.enrich:[pontoon] Demography '
+                                           'starting study %s/test_pontoon_enrich'
+                             % anonymize_url(self.es_con))
+            self.assertEqual(cm.output[-1], 'INFO:grimoire_elk.enriched.enrich:[pontoon] Demography '
+                                            'end %s/test_pontoon_enrich'
+                             % anonymize_url(self.es_con))
+
+        time.sleep(5)  # HACK: Wait until pontoon enrich index has been written
+        items = [item for item in enrich_backend.fetch()]
+        self.assertEqual(len(items), 20)
+        for item in items:
+            self.assertTrue('demography_min_date' in item.keys())
+            self.assertTrue('demography_max_date' in item.keys())
 
 
 if __name__ == "__main__":
