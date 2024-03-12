@@ -1,9 +1,0 @@
----
-title: Pontoon and Topicbox backends updated
-category: added
-author: Jose Javier Merchante <jjmerchante@bitergia.com>
-issue: null
-notes: >
-  Update Pontoon backend to include demography study and `review_status` field.
-  Update Topicbox backend to include demography study and `group` field, and fix
-  a bug with `root` field.
