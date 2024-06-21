@@ -57,7 +57,7 @@ cachetools = "5.3.1"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^4.0.1"
-coverage = "^5.5"
+coverage = "^7.2.3"
 
 [build-system]
 requires = ["poetry-core"]
