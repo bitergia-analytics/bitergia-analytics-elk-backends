@@ -1632,13 +1632,13 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-pontoon"
-version = "0.1.9rc1"
+version = "0.1.9"
 description = "Perceval backend for Pontoon"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval_pontoon-0.1.9rc1-py3-none-any.whl", hash = "sha256:4c81c0397692af1b2244ce51cc3329e7448960748f79bc7b689988c24af3063d"},
-    {file = "perceval_pontoon-0.1.9rc1.tar.gz", hash = "sha256:751cb5e9b768387563b4a2d34914f9fb06de85fcad32df58b3f5c7b2f5c93bf5"},
+    {file = "perceval_pontoon-0.1.9-py3-none-any.whl", hash = "sha256:00d987c26d017d37b86c7ffba26d346ee16597fdca0e3e2f058bbc6799eb17f5"},
+    {file = "perceval_pontoon-0.1.9.tar.gz", hash = "sha256:2c63403f3b5eb08103dab7096b62052becd977c476a5cc13e89504c50bf65f3c"},
 ]
 
 [package.dependencies]
@@ -1647,13 +1647,13 @@ perceval = ">=0.19"
 
 [[package]]
 name = "perceval-public-inbox"
-version = "0.1.19rc1"
+version = "0.1.19"
 description = "Perceval backend for public-inbox."
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval_public_inbox-0.1.19rc1-py3-none-any.whl", hash = "sha256:c86a079daf79966c3e2d93e3e8f2ea94baf07c99d6cb0999a9aa915a796b6d61"},
-    {file = "perceval_public_inbox-0.1.19rc1.tar.gz", hash = "sha256:0b336864895a55ccc5a0d915853c88f12fb5a4f2c271a7fa2d3f9322ab358174"},
+    {file = "perceval_public_inbox-0.1.19-py3-none-any.whl", hash = "sha256:0b58ba0168855919d7d95ac4f30846aa224679d9bb366f94122cb8b9ec22ce1a"},
+    {file = "perceval_public_inbox-0.1.19.tar.gz", hash = "sha256:b1a021ab44dcd36596fc7241731148f9b2ecd523da7ef9261837bd4b086f2e64"},
 ]
 
 [package.dependencies]
@@ -1680,13 +1680,13 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-topicbox"
-version = "0.1.10rc1"
+version = "0.1.10"
 description = "Perceval backend for Topicbox"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval_topicbox-0.1.10rc1-py3-none-any.whl", hash = "sha256:a3b7912c5ff057ce8354f6bc671d4c489f2460d3f8fbbc42d6b093ef9b0be3d6"},
-    {file = "perceval_topicbox-0.1.10rc1.tar.gz", hash = "sha256:fa0bb26877cc1ec96f5c3720e08dcbd7e19fcb6997a854eb2126fbef7aa2ef06"},
+    {file = "perceval_topicbox-0.1.10-py3-none-any.whl", hash = "sha256:8cd7331eea52ca365e51a02f5759e3a0aa4439916f70b5e613a02c4ace3ca3f4"},
+    {file = "perceval_topicbox-0.1.10.tar.gz", hash = "sha256:d74b91d6969aace4bb18ebda243a57e154cf7ab03b8245198c0ec759fa698e65"},
 ]
 
 [package.dependencies]
@@ -2154,18 +2154,18 @@ test = ["asv", "gmpy2", "mpmath", "pytest", "pytest-cov", "pytest-xdist", "sciki
 
 [[package]]
 name = "setuptools"
-version = "72.1.0"
+version = "72.2.0"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "setuptools-72.1.0-py3-none-any.whl", hash = "sha256:5a03e1860cf56bb6ef48ce186b0e557fdba433237481a9a625176c2831be15d1"},
-    {file = "setuptools-72.1.0.tar.gz", hash = "sha256:8d243eff56d095e5817f796ede6ae32941278f542e0f941867cc05ae52b162ec"},
+    {file = "setuptools-72.2.0-py3-none-any.whl", hash = "sha256:f11dd94b7bae3a156a95ec151f24e4637fb4fa19c878e4d191bfb8b2d82728c4"},
+    {file = "setuptools-72.2.0.tar.gz", hash = "sha256:80aacbf633704e9c8bfa1d99fa5dd4dc59573efcf9e4042c13d3bcef91ac2ef9"},
 ]
 
 [package.extras]
 core = ["importlib-metadata (>=6)", "importlib-resources (>=5.10.2)", "jaraco.text (>=3.7)", "more-itertools (>=8.8)", "ordered-set (>=3.1.1)", "packaging (>=24)", "platformdirs (>=2.6.2)", "tomli (>=2.0.1)", "wheel (>=0.43.0)"]
-doc = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "pygments-github-lexers (==0.0.5)", "pyproject-hooks (!=1.1)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-favicon", "sphinx-inline-tabs", "sphinx-lint", "sphinx-notfound-page (>=1,<2)", "sphinx-reredirects", "sphinxcontrib-towncrier"]
+doc = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "pygments-github-lexers (==0.0.5)", "pyproject-hooks (!=1.1)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-favicon", "sphinx-inline-tabs", "sphinx-lint", "sphinx-notfound-page (>=1,<2)", "sphinx-reredirects", "sphinxcontrib-towncrier", "towncrier (<24.7)"]
 test = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "importlib-metadata", "ini2toml[lite] (>=0.14)", "jaraco.develop (>=7.21)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "jaraco.test", "mypy (==1.11.*)", "packaging (>=23.2)", "pip (>=19.1)", "pyproject-hooks (!=1.1)", "pytest (>=6,!=8.1.*)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-home (>=0.5)", "pytest-mypy", "pytest-perf", "pytest-ruff (<0.4)", "pytest-ruff (>=0.2.1)", "pytest-ruff (>=0.3.2)", "pytest-subprocess", "pytest-timeout", "pytest-xdist (>=3)", "tomli", "tomli-w (>=1.0.0)", "virtualenv (>=13.0.0)", "wheel"]
 
 [[package]]
