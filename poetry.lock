@@ -1044,13 +1044,13 @@ grpc = ["grpcio (>=1.44.0,<2.0.0.dev0)"]
 
 [[package]]
 name = "graal"
-version = "1.0.4"
+version = "1.0.5"
 description = "A generic source code analyzer"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "graal-1.0.4-py3-none-any.whl", hash = "sha256:90b07089b616402684ecc5e1483e5fe646d3fe371c7c9237dad7b49bd8bb2cbd"},
-    {file = "graal-1.0.4.tar.gz", hash = "sha256:865fdf548b7ceb75ad35f78e2eb2b8aa74b16dfda2f2fb220064507a5afe5eb4"},
+    {file = "graal-1.0.5-py3-none-any.whl", hash = "sha256:3a3e38cf8e909eb9f06daf5b4dab6f0c762d202e43110eff2e44454252a2e541"},
+    {file = "graal-1.0.5.tar.gz", hash = "sha256:0166a0d21dd42a2f6c9f35dc96bef2aa6c0d2626d5cae08d3b65066ba6a9cc85"},
 ]
 
 [package.dependencies]
@@ -1150,13 +1150,13 @@ six = ">=1.12"
 
 [[package]]
 name = "grimoire-elk"
-version = "1.1.3"
+version = "1.1.4"
 description = "GrimoireELK processes and stores software development data to ElasticSearch"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "grimoire_elk-1.1.3-py3-none-any.whl", hash = "sha256:457bab869ffd1d80271e75bc0c79cc88dd72dc38400e524fd01be162dc9c8b86"},
-    {file = "grimoire_elk-1.1.3.tar.gz", hash = "sha256:f0ff4ac886454ceba9f00e9a488e2b0766c7068835b7cbafac8cb9fa26e85d46"},
+    {file = "grimoire_elk-1.1.4-py3-none-any.whl", hash = "sha256:9578c9d3937cb37d4c1f09eb98f7fdcc710fa3c4948e4bbe820774604f23c5ec"},
+    {file = "grimoire_elk-1.1.4.tar.gz", hash = "sha256:29e665b6d9746375a9d5cda72ee4e08b025f29a5bb78c0e920e09897fcfb704f"},
 ]
 
 [package.dependencies]
@@ -1575,13 +1575,13 @@ files = [
 
 [[package]]
 name = "perceval"
-version = "1.0.4"
+version = "1.0.5"
 description = "Send Sir Perceval on a quest to fetch and gather data from software repositories."
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval-1.0.4-py3-none-any.whl", hash = "sha256:c904f3bdabb1a102ab79427956d3392712e289bd873133b6aaa109b6a898b18f"},
-    {file = "perceval-1.0.4.tar.gz", hash = "sha256:c30be7fb136a8b6fa1a15adf61e382796c92f846b8689a206d330b3060944750"},
+    {file = "perceval-1.0.5-py3-none-any.whl", hash = "sha256:410f136b7821fa0359ea5f9f57775a03d925550d092591578d382d0996a85ef5"},
+    {file = "perceval-1.0.5.tar.gz", hash = "sha256:7180f739ed1d88bbade6b73313184194cbaf60cb79a068f8a1890911fbf13abd"},
 ]
 
 [package.dependencies]
@@ -1600,13 +1600,13 @@ docs = ["furo (>=2023.03.27,<2024.0.0)", "myst-parser (>=1.0.0,<2.0.0)"]
 
 [[package]]
 name = "perceval-mozilla"
-version = "1.0.4"
+version = "1.0.5"
 description = "Bundle of Perceval backends for Mozilla ecosystem."
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval_mozilla-1.0.4-py3-none-any.whl", hash = "sha256:63b1883ee9a74ada172397b9358eeb6469dd583aaad5daf2ade89b09a206bef3"},
-    {file = "perceval_mozilla-1.0.4.tar.gz", hash = "sha256:d642290a6c9d3afba4917c22e29f040a3cf59e3ccad173e1acbded01e7d474cd"},
+    {file = "perceval_mozilla-1.0.5-py3-none-any.whl", hash = "sha256:c83efe6c4cefc9c42ff1ed7c136a78bb7b678fd30985638ffdbc3f1f999ecac8"},
+    {file = "perceval_mozilla-1.0.5.tar.gz", hash = "sha256:4d20a3bd9d20fdd8bb98986d0149d543fe1aa8b05ff0221ca0942a77980e028e"},
 ]
 
 [package.dependencies]
@@ -1616,13 +1616,13 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-opnfv"
-version = "1.0.4"
+version = "1.0.5"
 description = "Bundle of Perceval backends for OPNFV ecosystem."
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval_opnfv-1.0.4-py3-none-any.whl", hash = "sha256:12fe1860b1157af2129547d3c172b49250e44906ae0846237b009b2f4c112552"},
-    {file = "perceval_opnfv-1.0.4.tar.gz", hash = "sha256:20450da166a7ab054104ba16a6071e8aabfbfedd75997197d8f2ad7e7a8974ef"},
+    {file = "perceval_opnfv-1.0.5-py3-none-any.whl", hash = "sha256:0fc70ebb3d646eb93205b057c91535cc2fcacd1083d653e0a3b89199b734d215"},
+    {file = "perceval_opnfv-1.0.5.tar.gz", hash = "sha256:88d7b2c8b6bad64ba9bfbb5be9dbe95feb52f5690fdd931d0f1bfbb65408d456"},
 ]
 
 [package.dependencies]
@@ -1632,13 +1632,13 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-pontoon"
-version = "0.1.8"
+version = "0.1.9rc1"
 description = "Perceval backend for Pontoon"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval_pontoon-0.1.8-py3-none-any.whl", hash = "sha256:80169e34f2101317a2f2acf80c38d68fc88bc70eef76055d5db68b1d46907a26"},
-    {file = "perceval_pontoon-0.1.8.tar.gz", hash = "sha256:abd73bbdc732bef621296495179dfe63221545b82dd92630f7d0060b58efcae1"},
+    {file = "perceval_pontoon-0.1.9rc1-py3-none-any.whl", hash = "sha256:4c81c0397692af1b2244ce51cc3329e7448960748f79bc7b689988c24af3063d"},
+    {file = "perceval_pontoon-0.1.9rc1.tar.gz", hash = "sha256:751cb5e9b768387563b4a2d34914f9fb06de85fcad32df58b3f5c7b2f5c93bf5"},
 ]
 
 [package.dependencies]
@@ -1647,13 +1647,13 @@ perceval = ">=0.19"
 
 [[package]]
 name = "perceval-public-inbox"
-version = "0.1.18"
+version = "0.1.19rc1"
 description = "Perceval backend for public-inbox."
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval_public_inbox-0.1.18-py3-none-any.whl", hash = "sha256:a107843f0ecaba9185aa64421d5f75c1641dd022840429245290e73c5b3e0d8d"},
-    {file = "perceval_public_inbox-0.1.18.tar.gz", hash = "sha256:58ada4084f2af94746f7aefa76af334c19978dbc3b067af71e87e98460ffd543"},
+    {file = "perceval_public_inbox-0.1.19rc1-py3-none-any.whl", hash = "sha256:c86a079daf79966c3e2d93e3e8f2ea94baf07c99d6cb0999a9aa915a796b6d61"},
+    {file = "perceval_public_inbox-0.1.19rc1.tar.gz", hash = "sha256:0b336864895a55ccc5a0d915853c88f12fb5a4f2c271a7fa2d3f9322ab358174"},
 ]
 
 [package.dependencies]
@@ -1664,13 +1664,13 @@ perceval = ">=0.19"
 
 [[package]]
 name = "perceval-puppet"
-version = "1.0.4"
+version = "1.0.5"
 description = "Bundle of Perceval backends for Puppet, Inc. ecosystem."
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval_puppet-1.0.4-py3-none-any.whl", hash = "sha256:864b14756b099ed11a63aa3464fdf77d8d3663bf2866bc7017fb615b5895805f"},
-    {file = "perceval_puppet-1.0.4.tar.gz", hash = "sha256:060cea05ce127dda69bcca0285fe8de6d32956fab8c2223d29c755cf20203cb6"},
+    {file = "perceval_puppet-1.0.5-py3-none-any.whl", hash = "sha256:979a886e745752533ba004db411720bf43a76cea9a1231497971e629577e90a7"},
+    {file = "perceval_puppet-1.0.5.tar.gz", hash = "sha256:fc0d5ed726fbec11b52bb35a1e7a7ff02d935e69f2be946851eac32e4a09f769"},
 ]
 
 [package.dependencies]
@@ -1680,13 +1680,13 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-topicbox"
-version = "0.1.9"
+version = "0.1.10rc1"
 description = "Perceval backend for Topicbox"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval_topicbox-0.1.9-py3-none-any.whl", hash = "sha256:b896b376297e454bc69a60bbc7f3990cfb8e45147d812f4b6c1153e7f58a8148"},
-    {file = "perceval_topicbox-0.1.9.tar.gz", hash = "sha256:7c60f49a4c65aceabf642c61b0c9aa21825490066668767b388543bafd990ea8"},
+    {file = "perceval_topicbox-0.1.10rc1-py3-none-any.whl", hash = "sha256:a3b7912c5ff057ce8354f6bc671d4c489f2460d3f8fbbc42d6b093ef9b0be3d6"},
+    {file = "perceval_topicbox-0.1.10rc1.tar.gz", hash = "sha256:fa0bb26877cc1ec96f5c3720e08dcbd7e19fcb6997a854eb2126fbef7aa2ef06"},
 ]
 
 [package.dependencies]
@@ -1695,13 +1695,13 @@ perceval = ">=0.19"
 
 [[package]]
 name = "perceval-weblate"
-version = "1.0.4"
+version = "1.0.5"
 description = "Bundle of Perceval backends for Weblate."
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval_weblate-1.0.4-py3-none-any.whl", hash = "sha256:c47a58a6b4b47f229b04f4b7bdd4306fe369e9f603525d031ab60f28a92da6cc"},
-    {file = "perceval_weblate-1.0.4.tar.gz", hash = "sha256:4ca928353cef4d30d3b4692b22e9783cab1d8eba4e3eb4e12b86cddf0c8351cb"},
+    {file = "perceval_weblate-1.0.5-py3-none-any.whl", hash = "sha256:2307332a8ac560e3fc78a7ad725568ec27a6b3460ea0b9e1537e1a095f86244d"},
+    {file = "perceval_weblate-1.0.5.tar.gz", hash = "sha256:c3794fcade9b1d090f109e9c4a158f3a05f16b9340c50324e94f61e615e69803"},
 ]
 
 [package.dependencies]
@@ -2225,13 +2225,13 @@ files = [
 
 [[package]]
 name = "sortinghat"
-version = "1.2.0"
+version = "1.2.1"
 description = "A tool to manage identities."
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "sortinghat-1.2.0-py3-none-any.whl", hash = "sha256:741ff9879588067c1f55172d7557f6b6e20599f9fc140db52ad87a04bcb682c6"},
-    {file = "sortinghat-1.2.0.tar.gz", hash = "sha256:5c436ad0cb89b325dc9fd5481df3e74b76003534d66510ee70df48f9404f996a"},
+    {file = "sortinghat-1.2.1-py3-none-any.whl", hash = "sha256:dc5768842f302a758b7309ba732a0fa822e2dc0229d0918952f0889cdc4276fc"},
+    {file = "sortinghat-1.2.1.tar.gz", hash = "sha256:1b15e7ff82b8fc32eec5d85078d6a8fbcfdc75eb57f8b037f8185e6b7b6a5de0"},
 ]
 
 [package.dependencies]
@@ -2261,13 +2261,13 @@ uWSGI = ">=2.0,<3.0"
 
 [[package]]
 name = "soupsieve"
-version = "2.5"
+version = "2.6"
 description = "A modern CSS selector implementation for Beautiful Soup."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "soupsieve-2.5-py3-none-any.whl", hash = "sha256:eaa337ff55a1579b6549dc679565eac1e3d000563bcb1c8ab0d0fefbc0c2cdc7"},
-    {file = "soupsieve-2.5.tar.gz", hash = "sha256:5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"},
+    {file = "soupsieve-2.6-py3-none-any.whl", hash = "sha256:e72c4ff06e4fb6e4b5a9f0f55fe6e81514581fca1515028625d0f299c602ccc9"},
+    {file = "soupsieve-2.6.tar.gz", hash = "sha256:e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"},
 ]
 
 [[package]]
@@ -2476,13 +2476,13 @@ files = [
 
 [[package]]
 name = "zipp"
-version = "3.19.2"
+version = "3.20.0"
 description = "Backport of pathlib-compatible object wrapper for zip files"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "zipp-3.19.2-py3-none-any.whl", hash = "sha256:f091755f667055f2d02b32c53771a7a6c8b47e1fdbc4b72a8b9072b3eef8015c"},
-    {file = "zipp-3.19.2.tar.gz", hash = "sha256:bf1dcf6450f873a13e952a29504887c89e6de7506209e5b1bcc3460135d4de19"},
+    {file = "zipp-3.20.0-py3-none-any.whl", hash = "sha256:58da6168be89f0be59beb194da1250516fdaa062ccebd30127ac65d30045e10d"},
+    {file = "zipp-3.20.0.tar.gz", hash = "sha256:0145e43d89664cfe1a2e533adc75adafed82fe2da404b4bbb6b026c0157bdb31"},
 ]
 
 [package.extras]
