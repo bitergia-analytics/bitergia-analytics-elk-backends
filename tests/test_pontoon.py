@@ -49,77 +49,85 @@ class TestPontoon(TestBaseBackend):
         """Test whether JSON items are properly inserted into ES"""
 
         result = self._test_items_to_raw()
-        self.assertEqual(result['items'], 5)
-        self.assertEqual(result['raw'], 5)
+        self.assertEqual(result['items'], 4)
+        self.assertEqual(result['raw'], 4)
 
     def test_raw_to_enrich(self):
         """Test whether the raw index is properly enriched"""
 
         result = self._test_raw_to_enrich()
-        self.assertEqual(result['raw'], 5)
-        self.assertEqual(result['enrich'], 20)
+        self.assertEqual(result['raw'], 4)
+        self.assertEqual(result['enrich'], 4)
 
         enrich_backend = self.connectors[self.connector][2]()
 
         item = self.items[0]
-        eitems = enrich_backend.enrich_translations(item)
-        self.assertEqual(len(eitems), 4)
-        eitem = eitems[0]
-        self.assertEqual(eitem['origin'], 'https://pontoon.example.com/es')
-        self.assertEqual(eitem['locale'], 'es')
-        self.assertEqual(eitem['project_slug'], 'amo')
-        self.assertEqual(eitem['id'], 'entity_280952_translation_9925882')
-        self.assertEqual(eitem['entity_pk'], 280952)
-        self.assertEqual(eitem['translation_pk'], 9925882)
-        self.assertEqual(eitem['path'], 'LC_MESSAGES/djangojs.po')
-        self.assertRegex(eitem['original'], 'Your extension has to be compatible.*')
-        self.assertRegex(eitem['string'], 'Tu extensión tiene que ser compatible.*')
-        self.assertTrue(eitem['approved'])
-        self.assertFalse(eitem['rejected'])
-        self.assertEqual(eitem['approved_user'], 'user_approve')
-        self.assertEqual(eitem['user'], 'user1')
-        self.assertEqual(eitem['review_status'], 'peer-approved')
-        self.assertEqual(eitem['url'],
-                         'https://pontoon.example.com/es/amo/LC_MESSAGES/djangojs.po?string=280952')
-
-        eitem = eitems[1]
-        self.assertEqual(eitem['origin'], 'https://pontoon.example.com/es')
-        self.assertEqual(eitem['locale'], 'es')
-        self.assertEqual(eitem['project_slug'], 'amo')
-        self.assertEqual(eitem['id'], 'entity_280952_translation_9746098')
-        self.assertEqual(eitem['entity_pk'], 280952)
-        self.assertEqual(eitem['translation_pk'], 9746098)
-        self.assertEqual(eitem['path'], 'LC_MESSAGES/djangojs.po')
-        self.assertRegex(eitem['original'], 'Your extension has to be compatible.*')
-        self.assertRegex(eitem['string'], 'Tu extensión tiene que ser compatible.*.')
-        self.assertFalse(eitem['approved'])
-        self.assertFalse(eitem['rejected'])
-        self.assertEqual(eitem['approved_user'], '')
-        self.assertEqual(eitem['user'], 'user2')
-        self.assertEqual(eitem['review_status'], 'unreviewed')
-        self.assertEqual(eitem['url'],
-                         'https://pontoon.example.com/es/amo/LC_MESSAGES/djangojs.po?string=280952')
+        eitem = enrich_backend.get_rich_item(item)
+        self.assertEqual(eitem['origin'], 'https://pontoon.mozilla.org/p1')
+        self.assertEqual(eitem['id'], 'action:p1:el:86261:2018965:translation:approved')
+        self.assertEqual(eitem['type'], 'translation:approved')
+        self.assertEqual(eitem['date'], '2016-11-17T09:31:04.768000+00:00')
+        self.assertEqual(eitem['user_name'], 'User 1')
+        self.assertEqual(eitem['user_pk'], 1)
+        self.assertEqual(eitem['entity_pk'], 86261)
+        self.assertEqual(eitem['locale'], 'el')
+        self.assertEqual(eitem['resource_path'], 'mail/chrome/messenger/messengercompose/composeMsgs.properties')
+        self.assertEqual(eitem['translation_string'], 'Sample string')
+        self.assertEqual(eitem['translation_pk'], 2018965)
+        self.assertEqual(eitem['project_slug'], 'p1')
+        self.assertEqual(eitem['url'], 'https://pontoon.mozilla.org/el/p1/'
+                                       'mail/chrome/messenger/messengercompose/composeMsgs.properties?string=86261')
 
         item = self.items[1]
-        eitems = enrich_backend.enrich_translations(item)
-        self.assertEqual(len(eitems), 4)
-        eitem = eitems[0]
-        self.assertEqual(eitem['origin'], 'https://pontoon.example.com/es')
-        self.assertEqual(eitem['locale'], 'es')
-        self.assertEqual(eitem['project_slug'], 'amo')
-        self.assertEqual(eitem['id'], 'entity_292898_translation_9925882')
-        self.assertEqual(eitem['entity_pk'], 292898)
-        self.assertEqual(eitem['translation_pk'], 9925882)
-        self.assertEqual(eitem['path'], 'LC_MESSAGES/django.po')
-        self.assertRegex(eitem['original'], 'Warning: the following manifest.*')
-        self.assertRegex(eitem['string'], 'Tu extensión tiene que ser compatible.*')
-        self.assertFalse(eitem['approved'])
-        self.assertTrue(eitem['rejected'])
-        self.assertEqual(eitem['approved_user'], '')
-        self.assertEqual(eitem['user'], 'user1')
-        self.assertEqual(eitem['review_status'], 'rejected')
+        eitem = enrich_backend.get_rich_item(item)
+        self.assertEqual(eitem['origin'], 'https://pontoon.mozilla.org/p1')
+        self.assertEqual(eitem['id'], 'action:p1:el:83090:2470935:translation:created')
+        self.assertEqual(eitem['type'], 'translation:created')
+        self.assertEqual(eitem['date'], '2016-11-17T09:38:22.129000+00:00')
+        self.assertEqual(eitem['user_name'], 'User 1')
+        self.assertEqual(eitem['user_pk'], 1)
+        self.assertEqual(eitem['entity_pk'], 83090)
+        self.assertEqual(eitem['locale'], 'el')
+        self.assertEqual(eitem['resource_path'], 'mail/chrome/messenger/messenger.properties')
+        self.assertEqual(eitem['translation_string'], 'Sample string 2')
+        self.assertEqual(eitem['translation_pk'], 2470935)
+        self.assertEqual(eitem['project_slug'], 'p1')
+        self.assertEqual(eitem['url'], 'https://pontoon.mozilla.org/el/p1/'
+                                       'mail/chrome/messenger/messenger.properties?string=83090')
+
+        item = self.items[2]
+        eitem = enrich_backend.get_rich_item(item)
+        self.assertEqual(eitem['origin'], 'https://pontoon.mozilla.org/p1')
+        self.assertEqual(eitem['id'], 'action:p1:el:83140:2016834:translation:approved')
+        self.assertEqual(eitem['type'], 'translation:approved')
+        self.assertEqual(eitem['date'], '2016-11-17T09:39:34.077000+00:00')
+        self.assertEqual(eitem['user_name'], 'User 1')
+        self.assertEqual(eitem['user_pk'], 1)
+        self.assertEqual(eitem['entity_pk'], 83140)
+        self.assertEqual(eitem['locale'], 'el')
+        self.assertEqual(eitem['resource_path'], 'mail/chrome/messenger/messenger.properties')
+        self.assertEqual(eitem['translation_string'], 'NTLM')
+        self.assertEqual(eitem['translation_pk'], 2016834)
+        self.assertEqual(eitem['project_slug'], 'p1')
+        self.assertEqual(eitem['url'], 'https://pontoon.mozilla.org/el/p1/'
+                                       'mail/chrome/messenger/messenger.properties?string=83140')
+
+        item = self.items[3]
+        eitem = enrich_backend.get_rich_item(item)
+        self.assertEqual(eitem['origin'], 'https://pontoon.mozilla.org/p1')
+        self.assertEqual(eitem['id'], 'action:p1:el:85470:2016743:translation:approved')
+        self.assertEqual(eitem['type'], 'translation:approved')
+        self.assertEqual(eitem['date'], '2016-11-17T08:46:23.174000+00:00')
+        self.assertEqual(eitem['user_name'], 'User 1')
+        self.assertEqual(eitem['user_pk'], 1)
+        self.assertEqual(eitem['entity_pk'], 85470)
+        self.assertEqual(eitem['locale'], 'el')
+        self.assertEqual(eitem['resource_path'], 'mail/chrome/messenger/messenger.dtd')
+        self.assertEqual(eitem['translation_string'], 'Sample string 3')
+        self.assertEqual(eitem['translation_pk'], 2016743)
+        self.assertEqual(eitem['project_slug'], 'p1')
         self.assertEqual(eitem['url'],
-                         'https://pontoon.example.com/es/amo/LC_MESSAGES/django.po?string=292898')
+                         'https://pontoon.mozilla.org/el/p1/mail/chrome/messenger/messenger.dtd?string=85470')
 
     def test_enrich_repo_labels(self):
         """Test whether the field REPO_LABELS is present in the enriched items"""
@@ -128,16 +136,15 @@ class TestPontoon(TestBaseBackend):
         enrich_backend = self.connectors[self.connector][2]()
 
         for item in self.items:
-            eitems = enrich_backend.enrich_translations(item)
-            for eitem in eitems:
-                self.assertIn(REPO_LABELS, eitem)
+            eitem = enrich_backend.get_rich_item(item)
+            self.assertIn(REPO_LABELS, eitem)
 
     def test_raw_to_enrich_sorting_hat(self):
         """Test enrich with SortingHat"""
 
         result = self._test_raw_to_enrich(sortinghat=True)
-        self.assertEqual(result['raw'], 5)
-        self.assertEqual(result['enrich'], 20)
+        self.assertEqual(result['raw'], 4)
+        self.assertEqual(result['enrich'], 4)
 
         enrich_backend = self.connectors[self.connector][2]()
 
@@ -157,8 +164,8 @@ class TestPontoon(TestBaseBackend):
         """Test enrich with Projects"""
 
         result = self._test_raw_to_enrich(projects=True)
-        self.assertEqual(result['raw'], 5)
-        self.assertEqual(result['enrich'], 20)
+        self.assertEqual(result['raw'], 4)
+        self.assertEqual(result['enrich'], 4)
 
     def test_refresh_identities(self):
         """Test refresh identities"""
@@ -172,7 +179,7 @@ class TestPontoon(TestBaseBackend):
 
         empty_identity = {}
 
-        item = {'data': {"history_data": {"user": None}}}
+        item = {'data': {"user": None}}
 
         self.assertDictEqual(empty_identity, enricher.get_sh_identity(item, "user"))
 
@@ -183,13 +190,12 @@ class TestPontoon(TestBaseBackend):
         enrich_backend = self.connectors[self.connector][2]()
 
         for item in self.items:
-            eitems = enrich_backend.enrich_translations(item)
-            for eitem in eitems:
-                for attribute in enrich_backend.RAW_FIELDS_COPY:
-                    if attribute in item:
-                        self.assertEqual(item[attribute], eitem[attribute])
-                    else:
-                        self.assertIsNone(eitem[attribute])
+            eitem = enrich_backend.get_rich_item(item)
+            for attribute in enrich_backend.RAW_FIELDS_COPY:
+                if attribute in item:
+                    self.assertEqual(item[attribute], eitem[attribute])
+                else:
+                    self.assertIsNone(eitem[attribute])
 
     def test_demography_study(self):
         """ Test that the demography study works correctly """
@@ -210,7 +216,7 @@ class TestPontoon(TestBaseBackend):
 
         time.sleep(5)  # HACK: Wait until pontoon enrich index has been written
         items = [item for item in enrich_backend.fetch()]
-        self.assertEqual(len(items), 20)
+        self.assertEqual(len(items), 4)
         for item in items:
             self.assertTrue('demography_min_date' in item.keys())
             self.assertTrue('demography_max_date' in item.keys())

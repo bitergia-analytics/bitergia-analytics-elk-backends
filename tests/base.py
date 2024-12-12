@@ -47,7 +47,7 @@ CONFIG_FILE = 'tests.conf'
 DB_SORTINGHAT = "test_sh"
 DB_PROJECTS = "test_projects"
 DB_HOST = '127.0.0.1'
-FILE_PROJECTS = "data/projects-release.json"
+FILE_PROJECTS = "data/projects.json"
 SCHEMA_DIR = '../schema/'
 
 
