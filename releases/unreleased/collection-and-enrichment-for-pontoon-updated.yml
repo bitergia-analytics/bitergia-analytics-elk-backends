@@ -1,0 +1,9 @@
+---
+title: Collection and enrichment for Pontoon updated
+category: added
+author: Jose Javier Merchante <jjmerchante@bitergia.com>
+issue: null
+notes: >
+  Pontoon backend has been updated to collect user actions instead
+  of storing translations. This change is made to reduce the overload
+  on the server side.

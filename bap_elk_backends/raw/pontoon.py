@@ -38,13 +38,13 @@ class Mapping(BaseMapping):
         :returns: dictionary with a key, 'items', with the mapping
         """
 
-        mapping = '''
+        mapping = """
          {
             "dynamic":true,
             "properties": {
                 "data": {
                     "properties": {
-                        "history_data": {
+                        "translation": {
                             "dynamic":false,
                             "properties": {
                                 "string": {
@@ -61,7 +61,7 @@ class Mapping(BaseMapping):
                 }
             }
         }
-        '''
+        """
 
         return {"items": mapping}
 
@@ -73,7 +73,8 @@ class PontoonOcean(ElasticOcean):
 
     @classmethod
     def get_perceval_params_from_url(cls, url):
-        # In the url the uri and the locale are included
-        params = url.split()
+        # In the url the uri and the project are included
+        origin, project = url.split()
+        params = [origin, '--project', project]
 
         return params
