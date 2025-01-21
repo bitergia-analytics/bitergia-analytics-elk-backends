@@ -1765,15 +1765,15 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-pontoon"
-version = "0.2.0rc1"
+version = "0.2.0"
 description = "Perceval backend for Pontoon"
 optional = false
 python-versions = "<4.0,>=3.9"
 groups = ["main"]
 markers = "python_version <= \"3.11\" or python_version >= \"3.12\""
 files = [
-    {file = "perceval_pontoon-0.2.0rc1-py3-none-any.whl", hash = "sha256:00c5e1808e279ff9567fe5bf5958f0ff3d49271a10cc9b39cdadf418561709dc"},
-    {file = "perceval_pontoon-0.2.0rc1.tar.gz", hash = "sha256:a69f932cc9eb4f2c16c88b5e37d0a17350535df11438df54c00471421dd7eb07"},
+    {file = "perceval_pontoon-0.2.0-py3-none-any.whl", hash = "sha256:b8b6b4bf6af5bd2ceb1a7a585a381f1124aa38b7f574642cc012f8ce52f6bde4"},
+    {file = "perceval_pontoon-0.2.0.tar.gz", hash = "sha256:7b9dcedaf0806f74904e3b72f3850614525b4523bf77724b1cbe27548dc26aea"},
 ]
 
 [package.dependencies]
@@ -1782,15 +1782,15 @@ perceval = ">=0.19"
 
 [[package]]
 name = "perceval-public-inbox"
-version = "0.1.25rc1"
+version = "0.1.25"
 description = "Perceval backend for public-inbox."
 optional = false
 python-versions = "<4.0,>=3.9"
 groups = ["main"]
 markers = "python_version <= \"3.11\" or python_version >= \"3.12\""
 files = [
-    {file = "perceval_public_inbox-0.1.25rc1-py3-none-any.whl", hash = "sha256:1ac9240708ad10764aaf1b396f58100ff2594996b613a56e96fac2ec73af23a0"},
-    {file = "perceval_public_inbox-0.1.25rc1.tar.gz", hash = "sha256:965701f4dc6d72070efd15187d259a881524ef5f84ebb260dfd3764626256a6c"},
+    {file = "perceval_public_inbox-0.1.25-py3-none-any.whl", hash = "sha256:6d4d665688b693541c82cc053a3daa03b5afed20a7b4bcc27059e2cd04231c42"},
+    {file = "perceval_public_inbox-0.1.25.tar.gz", hash = "sha256:01e42c13d1f2c2438329db263b436f0cc8b6b25f71fad97c9f0fa2e9e6a59fa9"},
 ]
 
 [package.dependencies]
@@ -1817,15 +1817,15 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-topicbox"
-version = "0.1.16rc1"
+version = "0.1.16"
 description = "Perceval backend for Topicbox"
 optional = false
 python-versions = "<4.0,>=3.9"
 groups = ["main"]
 markers = "python_version <= \"3.11\" or python_version >= \"3.12\""
 files = [
-    {file = "perceval_topicbox-0.1.16rc1-py3-none-any.whl", hash = "sha256:abf3e479093f4f6661180a5e17c77354e580904b10b1b81de8842704f7d10858"},
-    {file = "perceval_topicbox-0.1.16rc1.tar.gz", hash = "sha256:8262e3f868863e508ac72bbb83b1d8a119f3717bf59f5d2e2daf195cccc6a88e"},
+    {file = "perceval_topicbox-0.1.16-py3-none-any.whl", hash = "sha256:1ec79aa27915549a8cc605b3ffdf4dc1b7929b531b2609a6581fffa9d0d6f460"},
+    {file = "perceval_topicbox-0.1.16.tar.gz", hash = "sha256:18db1b8d5cccfad67cc6bbfb402ba2cef011ddaac7d1a8f98eac1b5fba5de055"},
 ]
 
 [package.dependencies]
