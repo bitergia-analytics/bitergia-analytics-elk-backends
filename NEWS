@@ -1,5 +1,15 @@
 # Releases
 
+## bap-elk-backends 0.6.0 - (2025-01-21)
+
+**New features:**
+
+ * Collection and enrichment for Pontoon updated\
+   Pontoon backend has been updated to collect user actions instead of
+   storing translations. This change is made to reduce the overload on
+   the server side.
+
+
   ## bap-elk-backends 0.5.14 - (2024-12-11)
   
   * Update Poetry's package dependencies
