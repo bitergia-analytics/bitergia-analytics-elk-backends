@@ -1140,14 +1140,14 @@ six = ">=1.12"
 
 [[package]]
 name = "grimoire-elk"
-version = "1.3.12"
+version = "1.3.13rc1"
 description = "GrimoireELK processes and stores software development data to ElasticSearch"
 optional = false
 python-versions = "<4.0,>=3.9"
 groups = ["main"]
 files = [
-    {file = "grimoire_elk-1.3.12-py3-none-any.whl", hash = "sha256:27f4b609a3f31af878dc5a3caa416dabeebfb3177985237209291ce5fd0033d8"},
-    {file = "grimoire_elk-1.3.12.tar.gz", hash = "sha256:50e28a610e14068b192af352de07392241b3045d264d22403f79af7276777618"},
+    {file = "grimoire_elk-1.3.13rc1-py3-none-any.whl", hash = "sha256:25ed91fbf90c0d183b54ebc751c496d5e015bde16bf20d63e5bed23392275567"},
+    {file = "grimoire_elk-1.3.13rc1.tar.gz", hash = "sha256:0105384a368ae0373c79391a505a7d06f5644ad26e233ecf1e33bb560b23064c"},
 ]
 
 [package.dependencies]
@@ -1776,14 +1776,14 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-pontoon"
-version = "0.2.9rc1"
+version = "0.2.9rc2"
 description = "Perceval backend for Pontoon"
 optional = false
 python-versions = "<4.0,>=3.9"
 groups = ["main"]
 files = [
-    {file = "perceval_pontoon-0.2.9rc1-py3-none-any.whl", hash = "sha256:5117a938ed49a4b63849e62b5cb55715140337edde429325f70d536ad8e22962"},
-    {file = "perceval_pontoon-0.2.9rc1.tar.gz", hash = "sha256:edbfa4b78032767d7cf37704740e087b7664e25878a39c694c8faf6e72285249"},
+    {file = "perceval_pontoon-0.2.9rc2-py3-none-any.whl", hash = "sha256:8fa5706139f33689467e96fa1fbf5c65b8eddf2c8a69cd3a54adfb1c590d8a13"},
+    {file = "perceval_pontoon-0.2.9rc2.tar.gz", hash = "sha256:d8c8924b535751d2e951b635d2e9bcf9f81acc238c78bd537526b2088169b488"},
 ]
 
 [package.dependencies]
@@ -1792,14 +1792,14 @@ perceval = ">=0.19"
 
 [[package]]
 name = "perceval-public-inbox"
-version = "0.1.34rc1"
+version = "0.1.34rc2"
 description = "Perceval backend for public-inbox."
 optional = false
 python-versions = "<4.0,>=3.9"
 groups = ["main"]
 files = [
-    {file = "perceval_public_inbox-0.1.34rc1-py3-none-any.whl", hash = "sha256:cb153d012ae937f2ae769778dd39a2af326d144e59b421c035239cf279222078"},
-    {file = "perceval_public_inbox-0.1.34rc1.tar.gz", hash = "sha256:913cfcfdd778f937171109e229ab980af93210405e49cd68c5fccfd2a97d29a6"},
+    {file = "perceval_public_inbox-0.1.34rc2-py3-none-any.whl", hash = "sha256:05334191467e4ede8b8af464e36fc37946bdb4bd4d934f02708d00324046953a"},
+    {file = "perceval_public_inbox-0.1.34rc2.tar.gz", hash = "sha256:43912de5376332555413413ceb64e5be5bb0865232cf3e78e22b65a09719ba46"},
 ]
 
 [package.dependencies]
@@ -1825,14 +1825,14 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-topicbox"
-version = "0.1.25rc1"
+version = "0.1.25rc2"
 description = "Perceval backend for Topicbox"
 optional = false
 python-versions = "<4.0,>=3.9"
 groups = ["main"]
 files = [
-    {file = "perceval_topicbox-0.1.25rc1-py3-none-any.whl", hash = "sha256:dcac846e9a0c926306b8aa00d7ca320901f4fe54d031a76f3abccb446b6c1016"},
-    {file = "perceval_topicbox-0.1.25rc1.tar.gz", hash = "sha256:2fe4a89e5fc8559b9ca3ff1f52718ad83206d51f324a4ae1adc8dfb3a90f9a45"},
+    {file = "perceval_topicbox-0.1.25rc2-py3-none-any.whl", hash = "sha256:2a68fc3c33f4104e3e5a2546fba971860cea2bb2f79565c1219b928a0579d678"},
+    {file = "perceval_topicbox-0.1.25rc2.tar.gz", hash = "sha256:f08492e7a6680cdaebc457733c6dc2adc2324cdb98592eea844238193a8d8314"},
 ]
 
 [package.dependencies]
@@ -1858,14 +1858,14 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "platformdirs"
-version = "4.3.8"
+version = "4.4.0"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a `user data dir`."
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "platformdirs-4.3.8-py3-none-any.whl", hash = "sha256:ff7059bb7eb1179e2685604f4aaf157cfd9535242bd23742eadc3c13542139b4"},
-    {file = "platformdirs-4.3.8.tar.gz", hash = "sha256:3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"},
+    {file = "platformdirs-4.4.0-py3-none-any.whl", hash = "sha256:abd01743f24e5287cd7a5db3752faf1a2d65353f38ec26d98e25a6db65958c85"},
+    {file = "platformdirs-4.4.0.tar.gz", hash = "sha256:ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"},
 ]
 
 [package.extras]
@@ -2524,14 +2524,14 @@ uWSGI = ">=2.0,<3.0"
 
 [[package]]
 name = "soupsieve"
-version = "2.7"
+version = "2.8"
 description = "A modern CSS selector implementation for Beautiful Soup."
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "soupsieve-2.7-py3-none-any.whl", hash = "sha256:6e60cc5c1ffaf1cebcc12e8188320b72071e922c2e897f737cadce79ad5d30c4"},
-    {file = "soupsieve-2.7.tar.gz", hash = "sha256:ad282f9b6926286d2ead4750552c8a6142bc4c783fd66b0293547c8fe6ae126a"},
+    {file = "soupsieve-2.8-py3-none-any.whl", hash = "sha256:0cc76456a30e20f5d7f2e14a98a4ae2ee4e5abdc7c5ea0aafe795f344bc7984c"},
+    {file = "soupsieve-2.8.tar.gz", hash = "sha256:e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"},
 ]
 
 [[package]]
