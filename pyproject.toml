@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bap-elk-backends"
-version = "0.6.9-rc.1"
+version = "0.6.9-rc.2"
 description = "GrimoireELK plugic for public-inbox."
 authors = [
     "Bitergia Developers"
