@@ -43,7 +43,7 @@ bap_elk_backends = 'bap_elk_backends.utils:get_connectors'
 "Bug Tracker" = "https://github.com/bitergia-analytics/bitergia-analytics-elk-backends/issues"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 
 grimoire-elk = { version = ">=0.106.0", allow-prereleases = true}
 perceval-public-inbox = { version = ">=0.1.1", allow-prereleases = true }
@@ -51,6 +51,7 @@ perceval-topicbox = { version = ">=0.1.0rc2", allow-prereleases = true }
 perceval-pontoon = { version = ">=0.1.0rc2", allow-prereleases = true }
 
 [tool.poetry.group.dev.dependencies]
+opensearch-py = "^3.0.0"
 flake8 = "^7.1.1"
 coverage = "^7.2.3"
 
