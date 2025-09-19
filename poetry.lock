@@ -580,14 +580,14 @@ bcrypt = ["bcrypt"]
 
 [[package]]
 name = "django-cors-headers"
-version = "4.8.0"
+version = "4.9.0"
 description = "django-cors-headers is a Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)."
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "django_cors_headers-4.8.0-py3-none-any.whl", hash = "sha256:3b883f4c6d07848673218456a5e070d8ab51f97341c1f27d0242ca167e7272ab"},
-    {file = "django_cors_headers-4.8.0.tar.gz", hash = "sha256:0a12a2efcd59a3cea741e44db8ab589e929949de5bc4cdf35a29c6ae77297686"},
+    {file = "django_cors_headers-4.9.0-py3-none-any.whl", hash = "sha256:15c7f20727f90044dcee2216a9fd7303741a864865f0c3657e28b7056f61b449"},
+    {file = "django_cors_headers-4.9.0.tar.gz", hash = "sha256:fe5d7cb59fdc2c8c646ce84b727ac2bca8912a247e6e68e1fb507372178e59e8"},
 ]
 
 [package.dependencies]
@@ -1797,14 +1797,14 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-pontoon"
-version = "0.3.0rc2"
+version = "0.3.0rc3"
 description = "Perceval backend for Pontoon"
 optional = false
 python-versions = "<4.0,>=3.10"
 groups = ["main"]
 files = [
-    {file = "perceval_pontoon-0.3.0rc2-py3-none-any.whl", hash = "sha256:7cb5f0b3b654f76a5e9eb97b94b7bb8e540d538b913abbdc5b2a74872126e972"},
-    {file = "perceval_pontoon-0.3.0rc2.tar.gz", hash = "sha256:d177fecad64473e4964933b85c420eff2cd236d70344d2f49d7fa431a2e3631b"},
+    {file = "perceval_pontoon-0.3.0rc3-py3-none-any.whl", hash = "sha256:5df5b42ebcc5e0e7ca2cbe197fb7ca1e5f1cb4cc9ff6fb47a83337ee215599e8"},
+    {file = "perceval_pontoon-0.3.0rc3.tar.gz", hash = "sha256:a589dd99b536766daecf6b1980b318e54b58f57053c8542f480ca2c7cd9ed85d"},
 ]
 
 [package.dependencies]
@@ -1813,14 +1813,14 @@ perceval = ">=0.19"
 
 [[package]]
 name = "perceval-public-inbox"
-version = "0.2.0rc2"
+version = "0.2.0rc3"
 description = "Perceval backend for public-inbox."
 optional = false
 python-versions = "<4.0,>=3.10"
 groups = ["main"]
 files = [
-    {file = "perceval_public_inbox-0.2.0rc2-py3-none-any.whl", hash = "sha256:c2aea02d1b68633c532212727d59c480d9d36fd3eeaf623e2832978fd6bd7a96"},
-    {file = "perceval_public_inbox-0.2.0rc2.tar.gz", hash = "sha256:a2c460563d2948cacc727b2887ded37ea4bf54652dd54e355d7faaed3eb4e92a"},
+    {file = "perceval_public_inbox-0.2.0rc3-py3-none-any.whl", hash = "sha256:7ed95dcb3891122548b101d7ade7beafca5ef5b93865a00ff674b77f07f8b7b4"},
+    {file = "perceval_public_inbox-0.2.0rc3.tar.gz", hash = "sha256:3967fe2c0d4da1efbd0bf97814d8694644800fd6584e43e9664e4c6bf6e927e8"},
 ]
 
 [package.dependencies]
@@ -1846,14 +1846,14 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-topicbox"
-version = "0.2.0rc2"
+version = "0.2.0rc3"
 description = "Perceval backend for Topicbox"
 optional = false
 python-versions = "<4.0,>=3.10"
 groups = ["main"]
 files = [
-    {file = "perceval_topicbox-0.2.0rc2-py3-none-any.whl", hash = "sha256:2511269301aab86df6d04a03b4d422271908d56833f8e31bc7d6d41fd06fd7f8"},
-    {file = "perceval_topicbox-0.2.0rc2.tar.gz", hash = "sha256:194e252e040ca5d63088f8a8360a79c20359bbc2507f22cd6e6a903e3cb4b27d"},
+    {file = "perceval_topicbox-0.2.0rc3-py3-none-any.whl", hash = "sha256:a2bc729f58b94f1ef2cd8886d2e103a927b82f43c8318e448b63898e08f0946f"},
+    {file = "perceval_topicbox-0.2.0rc3.tar.gz", hash = "sha256:681f143a578f9993cd3b93bd46eb3262e703141fa36014c5e2e1bbb0322e90bf"},
 ]
 
 [package.dependencies]
