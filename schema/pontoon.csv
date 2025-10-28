@@ -1,91 +1,58 @@
-name,type
-approved_user_bot,boolean
-approved_user_domain,string
-approved_user_gender,string
-approved_user_gender_acc,number
-approved_user_id,string
-approved_user_multi_org_names,string
-approved_user_name,string
-approved_user_org_name,string
-approved_user_user_name,string
-approved_user_uuid,string
-author_bot,boolean
-author_gender,string
-author_gender_acc,number
-author_id,string
-author_multi_org_names,string
-author_name,string
-author_org_name,string
-author_user_name,string
-author_uuid,string
-context,string
-date_created,date
-format,string
-grimoire_creation_date,date
-group_comment,string
-id,string
-is_pontoon_message,number
-key,string
-locale,string
-machinery_original,string
-machinery_original_analyzed,string
-obsolete,boolean
-order,number
-origin,string
-original,string
-original_analyzed,string
-path,string
-pk,number
-project,string
-project_1,string
-project_name,string
-project_pk,number
-project_slug,string
-readonly,boolean
-rejected_user_bot,boolean
-rejected_user_domain,string
-rejected_user_gender,string
-rejected_user_gender_acc,number
-rejected_user_id,string
-rejected_user_multi_org_names,string
-rejected_user_name,string
-rejected_user_org_name,string
-rejected_user_user_name,string
-rejected_user_uuid,string
-resource_comment,string
-review_status,keyword
-tag,string
-translation_approved,boolean
-translation_approved_user,string
-translation_comments,number
-translation_date,date
-translation_errors,number
-translation_fuzzy,boolean
-translation_machinery_sources,string
-translation_pk,number
-translation_pretranslated,boolean
-translation_rejected,boolean
-translation_rejected_user,string
-translation_string,string
-translation_string_analyzed,string
-translation_uid,number
-translation_user,string
-translation_username,string
-translation_warnings,number
-url,string
-user_bot,boolean
-user_domain,string
-user_gender,string
-user_gender_acc,number
-user_id,string
-user_multi_org_names,string
-user_name,string
-user_org_name,string
-user_user_name,string
-user_uuid,string
-uuid,string
-metadata__enriched_on,date
-metadata__gelk_backend_name,string
-metadata__gelk_version,string
-metadata__timestamp,date
-metadata__updated_on,date
+field,type,description
+author_bot,boolean,"True if the given author is identified as a bot (from SortingHat profile)."
+author_domain,string,Email domain or organization domain of the author
+author_gender,string,"Author gender, based on her name, from SortingHat."
+author_gender_acc,number,"Author gender accuracy from SortingHat."
+author_id,string,Unique identifier for the author
+author_multi_org_names,string,List of organization names associated with the author
+author_name,string,Author name
+author_org_name,string,Primary organization name of the author
+author_user_name,string,Author username
+author_uuid,string,"Author UUID."
+date,date,Date of the user action
+demography_max_date,date,Latest date considered in author demographic data
+demography_min_date,date,Earliest date considered in author demographic data
+entity_key,string,Key identifying the Pontoon entity (string to translate)
+entity_pk,number,Primary key for the Pontoon entity (string to translate)
+grimoire_creation_date,date,User action creation date
+id,string,Unique user action ID
+is_pontoon_action,number,Flag indicating if this record corresponds to a Pontoon action
+locale,string,Locale code
+entity_uid,string,ID to identify a specific translation formed as project:locale:entity
+locale_name,string,Human-readable name of the locale
+metadata__timestamp,date,"Date when the item was stored in RAW index."
+metadata__updated_on,date,"Date when the item was updated on its original data source."
+origin,string,"Original URL where the action was retrieved from."
+project,string,GrimoireLab project name
+project_1,string,"Project (if more than one level is allowed in project hierarchy)."
+project_name,string,Pontoon project name
+project_pk,number,Primary key for the Pontoon project
+project_slug,string,Slugified Pontoon project name used in URLs
+resource_format,string,File format of the translation resource
+resource_path,string,Path or identifier for the translation resource
+resource_pk,number,Primary key for the translation resource
+system_user,boolean,Whether the Pontoon user is a system account
+tag,string,Perceval tag
+translation_approved,boolean,Whether the translation was approved
+translation_errors,number,Number of detected translation errors
+translation_fuzzy,boolean,Whether the translation was marked as fuzzy
+translation_pk,number,Primary key for the translation
+translation_pretranslated,boolean,Whether the translation was pre-translated automatically
+translation_rejected,boolean,Whether the translation was rejected
+translation_string,string,Raw translation string
+translation_string_analyzed,string,Analyzed version of the translation string for full-text search
+translation_warnings,number,Number of translation warnings
+type,string,Type or category of the user action
+url,string,URL to the Pontoon entity
+user_bot,boolean,Whether the user is identified as a bot
+user_domain,string,Email or organization domain of the user
+user_gender,string,Predicted gender of the user
+user_gender_acc,number,Confidence score for the user's gender prediction
+user_id,string,Unique identifier for the user
+user_multi_org_names,string,List of organization names associated with the user
+user_name,string,Full name of the user
+user_org_name,string,Primary organization name of the user
+user_pk,number,Primary key for the user in Pontoon
+user_user_name,string,Username of the user
+user_uuid,string,UUID of the user
+uuid,string,"Perceval UUID."
