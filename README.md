@@ -55,15 +55,20 @@ studies = [ enrich_demography:topicbox ]  # (optional)
 ### Pontoon
 
 Web-based localization platform that facilitates collaborative
-translation of software and documentation
+translation of software and documentation.
+
+To obtain the actions performed by users on a Pontoon server, you need the
+server's URL, a project and the `sessionid` cookie. To get the `sessionid`
+cookie, log in to the Pontoon server. Then, open the browser's developer
+tools and copy the `sessionid` cookie from the cookies store or the network
+requests.
 
 - `projects.json`
 ```
 {
     "Example": {
         "pontoon": [
-            "https://pontoon.mozilla.org af",
-            "https://pontoon.mozilla.org es"
+            "https://pontoon.mozilla.org thunderbird"
         ]
     }
 }
@@ -74,15 +79,19 @@ translation of software and documentation
 [pontoon]
 raw_index = pontoon_raw
 enriched_index = pontoon_enriched
-studies = [ enrich_demography:pontoon ]  # (optional)
+session-id = xxxx
+studies = [ enrich_demography:pontoon, enrich_latest_translation_status:pontoon ]  # (optional)
 
 [enrich_demography:pontoon]  # (optional)
+
+[enrich_latest_translation_status:pontoon]  # (optional)
+out_index = pontoon_translation_status_1
 ```
 
 
 ## Requirements
 
- * Python >= 3.9
+ * Python >= 3.10
 
 You will also need some other libraries for running the tool, you can find the
 whole list of dependencies in [pyproject.toml](pyproject.toml) file.

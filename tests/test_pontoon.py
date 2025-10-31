@@ -26,7 +26,8 @@ import unittest
 
 from base import TestBaseBackend
 
-from bap_elk_backends.enriched.pontoon import PontoonEnrich
+from bap_elk_backends.enriched.pontoon import (PontoonEnrich,
+                                               logger as logger_pontoon)
 from grimoire_elk.enriched.utils import REPO_LABELS
 from grimoire_elk.enriched.enrich import (logger,
                                           anonymize_url)
@@ -49,15 +50,15 @@ class TestPontoon(TestBaseBackend):
         """Test whether JSON items are properly inserted into ES"""
 
         result = self._test_items_to_raw()
-        self.assertEqual(result['items'], 4)
-        self.assertEqual(result['raw'], 4)
+        self.assertEqual(result['items'], 7)
+        self.assertEqual(result['raw'], 7)
 
     def test_raw_to_enrich(self):
         """Test whether the raw index is properly enriched"""
 
         result = self._test_raw_to_enrich()
-        self.assertEqual(result['raw'], 4)
-        self.assertEqual(result['enrich'], 4)
+        self.assertEqual(result['raw'], 7)
+        self.assertEqual(result['enrich'], 7)
 
         enrich_backend = self.connectors[self.connector][2]()
 
@@ -143,8 +144,8 @@ class TestPontoon(TestBaseBackend):
         """Test enrich with SortingHat"""
 
         result = self._test_raw_to_enrich(sortinghat=True)
-        self.assertEqual(result['raw'], 4)
-        self.assertEqual(result['enrich'], 4)
+        self.assertEqual(result['raw'], 7)
+        self.assertEqual(result['enrich'], 7)
 
         enrich_backend = self.connectors[self.connector][2]()
 
@@ -164,8 +165,8 @@ class TestPontoon(TestBaseBackend):
         """Test enrich with Projects"""
 
         result = self._test_raw_to_enrich(projects=True)
-        self.assertEqual(result['raw'], 4)
-        self.assertEqual(result['enrich'], 4)
+        self.assertEqual(result['raw'], 7)
+        self.assertEqual(result['enrich'], 7)
 
     def test_refresh_identities(self):
         """Test refresh identities"""
@@ -216,10 +217,83 @@ class TestPontoon(TestBaseBackend):
 
         time.sleep(5)  # HACK: Wait until pontoon enrich index has been written
         items = [item for item in enrich_backend.fetch()]
-        self.assertEqual(len(items), 4)
+        self.assertEqual(len(items), 7)
         for item in items:
             self.assertTrue('demography_min_date' in item.keys())
             self.assertTrue('demography_max_date' in item.keys())
+
+    def test_enrich_latest_translation_status(self):
+        """Test enrich latest entity translation"""
+
+        index = "test_latest_translation_status_1"
+
+        study, ocean_backend, enrich_backend = self._test_study('enrich_latest_translation_status')
+
+        with self.assertLogs(logger_pontoon, level='INFO') as cm:
+            if study.__name__ == "enrich_latest_translation_status":
+                study(ocean_backend, enrich_backend,
+                      out_index=index,
+                      alias="test_latest_translation_status")
+
+            self.assertEqual(cm.output[0], f'INFO:bap_elk_backends.enriched.pontoon:[pontoon] '
+                                           f'Latest translation status study starting. '
+                                           f'Input: {anonymize_url(self.es_con)}/{self.enrich_index} '
+                                           f'Output: {anonymize_url(self.es_con)}/{index}')
+            self.assertEqual(cm.output[-1], 'INFO:bap_elk_backends.enriched.pontoon:[pontoon] '
+                                            'Latest translation status study ends.')
+
+        time.sleep(5)  # HACK: Wait until pontoon enrich index has been written
+
+        url = f"{self.es_con}/{index}/_search?size=20"
+        response = enrich_backend.requests.get(url, verify=False).json()
+        hits = [hit for hit in response['hits']['hits']]
+        self.assertEqual(len(hits), 5)
+
+        item = hits[0]['_source']
+        self.assertEqual(hits[0]['_id'], 'p1:cy:307116')
+        self.assertEqual(item['entity_pk'], 307116)
+        self.assertEqual(item['entity_uid'], 'p1:cy:307116')
+        self.assertEqual(item['type'], 'translation:created')
+        self.assertEqual(item['translation_approved'], True)
+        self.assertEqual(item['id'], 'action:p1:cy:307116:10209975:translation:created')
+        self.assertEqual(item['system_user'], True)
+        self.assertEqual(item['status'], 'Imported')
+
+        item = hits[1]['_source']
+        self.assertEqual(hits[1]['_id'], 'p1:el:83090')
+        self.assertEqual(item['entity_pk'], 83090)
+        self.assertEqual(item['entity_uid'], 'p1:el:83090')
+        self.assertEqual(item['type'], 'translation:created')
+        self.assertEqual(item['translation_approved'], True)
+        self.assertEqual(item['id'], 'action:p1:el:83090:8516196:translation:created')
+        self.assertEqual(item['status'], 'Approved')
+
+        item = hits[2]['_source']
+        self.assertEqual(hits[2]['_id'], 'p1:el:83140')
+        self.assertEqual(item['entity_pk'], 83140)
+        self.assertEqual(item['entity_uid'], 'p1:el:83140')
+        self.assertEqual(item['type'], 'translation:approved')
+        self.assertEqual(item['translation_approved'], True)
+        self.assertEqual(item['id'], 'action:p1:el:83140:2016834:translation:approved')
+        self.assertEqual(item['status'], 'Approved')
+
+        item = hits[3]['_source']
+        self.assertEqual(hits[3]['_id'], 'p1:el:85470')
+        self.assertEqual(item['entity_pk'], 85470)
+        self.assertEqual(item['entity_uid'], 'p1:el:85470')
+        self.assertEqual(item['type'], 'translation:approved')
+        self.assertEqual(item['translation_approved'], True)
+        self.assertEqual(item['id'], 'action:p1:el:85470:2016743:translation:approved')
+        self.assertEqual(item['status'], 'Approved')
+
+        item = hits[4]['_source']
+        self.assertEqual(hits[4]['_id'], 'p1:el:86261')
+        self.assertEqual(item['entity_pk'], 86261)
+        self.assertEqual(item['entity_uid'], 'p1:el:86261')
+        self.assertEqual(item['type'], 'translation:approved')
+        self.assertEqual(item['translation_approved'], True)
+        self.assertEqual(item['id'], 'action:p1:el:86261:2018965:translation:approved')
+        self.assertEqual(item['status'], 'Approved')
 
 
 if __name__ == "__main__":

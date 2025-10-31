@@ -214,5 +214,182 @@
     "timestamp":1.733998578168747E9,
     "updated_on":1.479372383174E9,
     "uuid":"aa1e5d86ccefc058ee12408cc04d2a1cef26466e"
+  },
+  {
+    "backend_name": "Pontoon",
+    "backend_version": "0.2.0",
+    "perceval_version": "1.4.0",
+    "timestamp": 1761654470.340331,
+    "origin": "https://pontoon.mozilla.org/p1",
+    "uuid": "e8732ec78347c07954f0183ec6ec771aa6528d2f",
+    "updated_on": 1631010656.12,
+    "classified_fields_filtered": null,
+    "category": "action",
+    "search_fields": {
+      "item_id": "action:p1:el:83090:2470935:translation:rejected"
+    },
+    "tag": "https://pontoon.mozilla.org/p1",
+    "data": {
+      "type": "translation:rejected",
+      "date": "2021-09-07T10:30:56.120Z",
+      "user": {
+        "pk": 976,
+        "name": "User 3",
+        "username": "aETvvMUPqUdEyG1xkuTEtvUgA1c",
+        "system_user": false
+      },
+      "locale": {
+        "pk": 88,
+        "code": "el",
+        "name": "Greek"
+      },
+      "entity": {
+        "pk": 83090,
+        "key": [
+          "confirmDuplicateFolderRename"
+        ]
+      },
+      "resource": {
+        "pk": 1045,
+        "path": "mail/chrome/messenger/messenger.properties",
+        "format": "properties"
+      },
+      "translation": {
+        "pk": 2470935,
+        "string": "Sample string 2",
+        "approved": false,
+        "rejected": true,
+        "pretranslated": false,
+        "fuzzy": false,
+        "errors": [],
+        "warnings": []
+      },
+      "project": {
+        "pk": 53,
+        "slug": "p1",
+        "name": "Project 1"
+      },
+      "id": "action:p1:el:83090:2470935:translation:rejected"
+    },
+    "metadata__updated_on": "2021-09-07T10:30:56.120000+00:00",
+    "metadata__timestamp": "2025-10-28T12:27:50.340331+00:00"
+  },
+  {
+    "backend_name": "Pontoon",
+    "backend_version": "0.2.0",
+    "perceval_version": "1.4.0",
+    "timestamp": 1761654470.340423,
+    "origin": "https://pontoon.mozilla.org/p1",
+    "uuid": "6f01c914800454ec560b94d70cae908c70ff0ad7",
+    "updated_on": 1631010656.201,
+    "classified_fields_filtered": null,
+    "category": "action",
+    "search_fields": {
+      "item_id": "action:p1:el:83090:8516196:translation:created"
+    },
+    "tag": "https://pontoon.mozilla.org/p1",
+    "data": {
+      "type": "translation:created",
+      "date": "2021-09-07T10:30:56.201Z",
+      "user": {
+        "pk": 976,
+        "name": "User 3",
+        "username": "aETvvMUPqUdEyG1xkuTEtvUgA1c",
+        "system_user": false
+      },
+      "locale": {
+        "pk": 88,
+        "code": "el",
+        "name": "Greek"
+      },
+      "entity": {
+        "pk": 83090,
+        "key": [
+          "confirmDuplicateFolderRename"
+        ]
+      },
+      "resource": {
+        "pk": 1045,
+        "path": "mail/chrome/messenger/messenger.properties",
+        "format": "properties"
+      },
+      "translation": {
+        "pk": 8516196,
+        "string": "Sample string 2",
+        "approved": true,
+        "rejected": false,
+        "pretranslated": false,
+        "fuzzy": false,
+        "errors": [],
+        "warnings": []
+      },
+      "project": {
+        "pk": 53,
+        "slug": "p1",
+        "name": "Project 1"
+      },
+      "id": "action:p1:el:83090:8516196:translation:created"
+    },
+    "metadata__updated_on": "2021-09-07T10:30:56.201000+00:00",
+    "metadata__timestamp": "2025-10-28T12:27:50.340423+00:00"
+  },
+  {
+    "backend_name": "Pontoon",
+    "backend_version": "0.2.0",
+    "perceval_version": "1.4.0",
+    "timestamp": 1761662951.873425,
+    "origin": "https://pontoon.mozilla.org/p1",
+    "uuid": "09235bbbddcb664d6fa03b20538428280c8cec9f",
+    "updated_on": 1718904913.794,
+    "classified_fields_filtered": null,
+    "category": "action",
+    "search_fields": {
+      "item_id": "action:p1:cy:307116:10209975:translation:created"
+    },
+    "tag": "https://pontoon.mozilla.org/p1",
+    "data": {
+      "type": "translation:created",
+      "date": "2024-06-20T17:35:13.794Z",
+      "user": {
+        "pk": 7048,
+        "name": "Sync",
+        "username": "pontoon-sync",
+        "system_user": true
+      },
+      "locale": {
+        "pk": 266,
+        "code": "cy",
+        "name": "Welsh"
+      },
+      "entity": {
+        "pk": 307116,
+        "key": [
+          "windowtitle-mixed-copy"
+        ]
+      },
+      "resource": {
+        "pk": 7711,
+        "path": "calendar/calendar/calendar-occurrence-prompt.ftl",
+        "format": "fluent"
+      },
+      "translation": {
+        "pk": 10209975,
+        "string": "windowtitle-mixed-copy = Copïo Eitemau sy'n Ailadrodd\n",
+        "approved": true,
+        "rejected": false,
+        "pretranslated": false,
+        "fuzzy": false,
+        "errors": [],
+        "warnings": []
+      },
+      "project": {
+        "pk": 53,
+        "slug": "p1",
+        "name": "Project 1"
+      },
+      "id": "action:p1:cy:307116:10209975:translation:created"
+    },
+    "metadata__updated_on": "2024-06-20T17:35:13.794000+00:00",
+    "metadata__timestamp": "2025-10-28T14:49:11.873425+00:00"
   }
 ]

@@ -19,12 +19,18 @@
 #   Jose Javier Merchante <jjmerchante@bitergia.com>
 #
 
+import datetime
 import logging
 
+from grimoire_elk.elastic import ElasticSearch
 from grimoire_elk.elastic_mapping import Mapping as BaseMapping
 from grimoire_elk.enriched.enrich import Enrich
+from grimoire_elk.enriched.utils import anonymize_url
 from grimoirelab_toolkit.datetime import str_to_datetime
 from grimoirelab_toolkit.uris import urijoin
+
+
+HEADER_JSON = {'Content-Type': 'application/json'}
 
 
 logger = logging.getLogger(__name__)
@@ -71,6 +77,7 @@ class PontoonEnrich(Enrich):
 
         self.studies = []
         self.studies.append(self.enrich_demography)
+        self.studies.append(self.enrich_latest_translation_status)
 
     def get_field_author(self):
         return "user"
@@ -154,6 +161,8 @@ class PontoonEnrich(Enrich):
         url += f"?string={action['entity']['pk']}"
         eitem['url'] = url
 
+        eitem['entity_uid'] = f"{eitem['project_slug']}:{eitem['locale']}:{eitem['entity_pk']}"
+
         if self.sortinghat:
             eitem.update(self.get_item_sh(action, self.action_roles, 'date'))
 
@@ -165,3 +174,116 @@ class PontoonEnrich(Enrich):
         eitem.update(self.get_grimoire_fields(action['date'], "action"))
 
         return eitem
+
+    def enrich_latest_translation_status(self, ocean_backend, enrich_backend, out_index,
+                                         alias="pontoon_latest_translation_status"):
+        """Identify the last translation action for each entity-locale pair and store it with the current status."""
+
+        es_out = ElasticSearch(enrich_backend.elastic.url, out_index)
+        es_out.add_alias(alias)
+
+        logger.info(f"[pontoon] Latest translation status study starting. "
+                    f"Input: {anonymize_url(enrich_backend.elastic.index_url)} "
+                    f"Output: {anonymize_url(es_out.index_url)}")
+
+        from_date = es_out.get_last_date(field="date")
+
+        items = self._get_latest_translation_per_entity_uid(from_date)
+
+        chunk = []
+        total = 0
+        for item in items:
+            item['status'] = self._get_translation_status(item)
+            chunk.append(item)
+            total += 1
+
+            if len(chunk) >= 100:
+                es_out.bulk_upload(chunk, field_id='entity_uid')
+                chunk = []
+
+        if chunk:
+            es_out.bulk_upload(chunk, field_id='entity_uid')
+
+        logger.info(f"[pontoon] Latest translation status study processed {total} entities")
+
+        logger.info("[pontoon] Latest translation status study ends.")
+
+    def _get_latest_translation_per_entity_uid(self, from_date=None):
+        """Get the latest translation action for each entity_uid.
+
+        Iterates over the most recent action for each entity_uid. When multiple actions exist
+        at the same time, the accepted action is preferred (sorted by type).
+
+        If from_date is provided, only actions from that date onward are considered.
+        """
+        query = {
+            "size": 0,
+            "aggs": {
+                "by_entity_uid": {
+                    "composite": {
+                        "size": 1000,
+                        "sources": [
+                            {"entity_uid": {"terms": {"field": "entity_uid"}}}
+                        ]
+                    },
+                    "aggs": {
+                        "latest_action": {
+                            "top_hits": {
+                                "size": 1,
+                                "sort": [
+                                    {"date": {"order": "desc"}},
+                                    {"type": {"order": "asc"}}
+                                ],
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if from_date:
+            query['query'] = {
+                "range": {
+                    "date": {
+                        "gte": from_date.isoformat() if isinstance(from_date, datetime.datetime) else from_date
+                    }
+                }
+            }
+
+        while True:
+            response = self.requests.post(self.elastic.index_url + "/_search", json=query,
+                                          headers=HEADER_JSON, verify=False)
+            if not response.ok:
+                logger.error(f"[pontoon] Latest translation status study. "
+                             f"Error fetching latest translations: {response.status_code} - {response.text}")
+                break
+
+            data = response.json()
+            buckets = data['aggregations']['by_entity_uid']['buckets']
+            for bucket in buckets:
+                latest_action = bucket['latest_action']['hits']['hits'][0]['_source']
+                yield latest_action
+
+            if 'after_key' in data['aggregations']['by_entity_uid']:
+                query['aggs']['by_entity_uid']['composite']['after'] = \
+                    data['aggregations']['by_entity_uid']['after_key']
+            else:
+                break
+
+    @staticmethod
+    def _get_translation_status(item):
+        """Determine the translation status of an entity based on the action item."""
+
+        status = "Pending"
+        if item['type'] == "translation:rejected":
+            status = "Rejected"
+        elif item['type'] == "translation:approved":
+            status = "Approved"
+        elif item['type'] == "translation:created":
+            if item['translation_approved']:
+                if item['system_user']:
+                    status = "Imported"
+                else:
+                    status = "Approved"
+
+        return status

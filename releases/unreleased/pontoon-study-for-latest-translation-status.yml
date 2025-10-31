@@ -1,0 +1,10 @@
+---
+title: Pontoon study for latest translation status
+category: added
+author: null
+issue: null
+notes: >
+  Create a new Pontoon study to obtain the translation
+  status for each entity-locale pair. It fetches the most
+  recent user actions and determines the entity status.
+  It creates a new index with the last action for each entity.
