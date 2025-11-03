@@ -1164,14 +1164,14 @@ test = ["coveralls", "django-filter (>=22.1)", "djangorestframework (>=3.6.3)", 
 
 [[package]]
 name = "graphql-core"
-version = "3.2.6"
+version = "3.2.7"
 description = "GraphQL implementation for Python, a port of GraphQL.js, the JavaScript reference implementation for GraphQL."
 optional = false
-python-versions = "<4,>=3.6"
+python-versions = "<4,>=3.7"
 groups = ["main"]
 files = [
-    {file = "graphql_core-3.2.6-py3-none-any.whl", hash = "sha256:78b016718c161a6fb20a7d97bbf107f331cd1afe53e45566c59f776ed7f0b45f"},
-    {file = "graphql_core-3.2.6.tar.gz", hash = "sha256:c08eec22f9e40f0bd61d805907e3b3b1b9a320bc606e23dc145eebca07c8fbab"},
+    {file = "graphql_core-3.2.7-py3-none-any.whl", hash = "sha256:17fc8f3ca4a42913d8e24d9ac9f08deddf0a0b2483076575757f6c412ead2ec0"},
+    {file = "graphql_core-3.2.7.tar.gz", hash = "sha256:27b6904bdd3b43f2a0556dad5d579bdfdeab1f38e8e8788e555bdcb586a6f62c"},
 ]
 
 [[package]]
@@ -1886,14 +1886,14 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-pontoon"
-version = "0.3.2rc1"
+version = "0.3.2"
 description = "Perceval backend for Pontoon"
 optional = false
 python-versions = "<4.0,>=3.10"
 groups = ["main"]
 files = [
-    {file = "perceval_pontoon-0.3.2rc1-py3-none-any.whl", hash = "sha256:2f2694b83f02aa8825756db30e14087040b251c5b14d06df8ae1cb9bc57ffdca"},
-    {file = "perceval_pontoon-0.3.2rc1.tar.gz", hash = "sha256:13c50b72d7d221c12bc79612168154b08187f3208fb45b3d09aea8650915ac59"},
+    {file = "perceval_pontoon-0.3.2-py3-none-any.whl", hash = "sha256:6e29a77c70255c624aee0c20a393149c13b8d9313030e77563d4e37790292fbc"},
+    {file = "perceval_pontoon-0.3.2.tar.gz", hash = "sha256:2600828f2970d91dd2a456c0f2773db9b0bf339f29d030108a0d34350e954515"},
 ]
 
 [package.dependencies]
@@ -1902,14 +1902,14 @@ perceval = ">=0.19"
 
 [[package]]
 name = "perceval-public-inbox"
-version = "0.2.2rc1"
+version = "0.2.2"
 description = "Perceval backend for public-inbox."
 optional = false
 python-versions = "<4.0,>=3.10"
 groups = ["main"]
 files = [
-    {file = "perceval_public_inbox-0.2.2rc1-py3-none-any.whl", hash = "sha256:46b7c11f6bf8a94d68c1783454298aec7c4a18ba104afe70fb98fb88a2114a7c"},
-    {file = "perceval_public_inbox-0.2.2rc1.tar.gz", hash = "sha256:c2cadc36025d08de2032cfee1cc76317268e8f533b42fa1b693b01733f0257ab"},
+    {file = "perceval_public_inbox-0.2.2-py3-none-any.whl", hash = "sha256:3847801e52ee5a52bf7f682086c0db1329984c20d8bca1bb925d54aeb0aadd73"},
+    {file = "perceval_public_inbox-0.2.2.tar.gz", hash = "sha256:0fabcda6db53fd05c05582fff800e2777812553265f399418342261a661f9a78"},
 ]
 
 [package.dependencies]
@@ -1935,14 +1935,14 @@ requests = ">=2.7.0,<3.0.0"
 
 [[package]]
 name = "perceval-topicbox"
-version = "0.2.2rc1"
+version = "0.2.2"
 description = "Perceval backend for Topicbox"
 optional = false
 python-versions = "<4.0,>=3.10"
 groups = ["main"]
 files = [
-    {file = "perceval_topicbox-0.2.2rc1-py3-none-any.whl", hash = "sha256:7e0dbd8d0dbe9f579301f116f137485b796f2c52944ad11ed688c31abd5c7bca"},
-    {file = "perceval_topicbox-0.2.2rc1.tar.gz", hash = "sha256:bab246ea772fa4eb1a063d973688cb971b3b5a6fb1b57aab840e81f012c0fd34"},
+    {file = "perceval_topicbox-0.2.2-py3-none-any.whl", hash = "sha256:ecd900ebddff460e282ef590610a0cb984e6b9ced18c176bde95879bea8b32f9"},
+    {file = "perceval_topicbox-0.2.2.tar.gz", hash = "sha256:4bbcc20a0526ec72265c26c6234a0f6a1c9bf6cfa54f9a5b66e9244d790d343b"},
 ]
 
 [package.dependencies]
