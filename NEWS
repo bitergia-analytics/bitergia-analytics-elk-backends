@@ -1,5 +1,9 @@
 # Releases
 
+  ## bap-elk-backends 0.8.5 - (2026-03-03)
+  
+  * Update Poetry's package dependencies
+
   ## bap-elk-backends 0.8.4 - (2026-01-21)
   
   * Update Poetry's package dependencies
